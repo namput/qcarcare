@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="neua_th.qcar.rmutl.contact">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:theme="?attr/actionBarTheme"
+        app:logo="@drawable/brand"
+        tools:ignore="MissingConstraints" />
+<ScrollView
+    android:id="@+id/scr"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/toolbar2"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="in.insideandroid.template.LoginActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:scrollbarThumbHorizontal="@null"
+        android:scrollbarThumbVertical="@null">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="210dp">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                app:srcCompat="@drawable/rmutl" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_marginTop="15dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/sic" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scr"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="in.insideandroid.template.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbarThumbHorizontal="@null"
+            android:scrollbarThumbVertical="@null">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_below="@id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ติดต่อ"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/it"
+                    android:textColor="@color/md_blue_grey_900"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/sic"
+                    android:textColor="@color/md_blue_grey_700"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/rmutl"
+                    android:textColor="@color/md_blue_grey_600"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ผู้พัฒนาระบบ นายเอกชัย ฉัตรพงศ์เลอเลิศ"
+                    android:textColor="@color/md_light_blue_800"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+                <ImageButton
+                    android:id="@+id/facebook"
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_facebook"
+                    android:layout_height="80dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

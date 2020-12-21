@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient_2"
+    android:layout_height="match_parent"
+    tools:context="neua_th.qcar.rmutl.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:theme="?attr/actionBarTheme"
+        app:logo="@drawable/brand"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_marginTop="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.gridlayout.widget.GridLayout
+                app:columnCount="2"
+                app:rowCount="2"
+                app:alignmentMode="alignMargins"
+                app:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/md_blue_700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/profile"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:background="@drawable/man"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"/>
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorBackground"
+                            android:text="โปรไฟล์"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/md_pink_300"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/history"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:background="@drawable/list"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"/>
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorBackground"
+                            android:text="ประวัติ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/md_blue_grey_600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/queue"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:background="@drawable/queue"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"/>
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorBackground"
+                            android:text="จองคิว"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/md_amber_400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/contact"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:background="@drawable/help"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"/>
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorBackground"
+                            android:text="ช่วยเหลือ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/whale" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
