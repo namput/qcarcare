@@ -133,10 +133,12 @@ public class profile extends AppCompatActivity {
                             .setCallback(new FutureCallback<String>() {
                                 @Override
                                 public void onCompleted(Exception e, String result) {
-                                    if (result!=null){
-                                        Toast.makeText(profile.this,"เพื่มรายการรถแล้ว",Toast.LENGTH_LONG).show();
-                                    }else {
-                                        Toast.makeText(profile.this,"ไม่สามารถบันทึกรายการได้",Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
+                                    switch (result){
+                                       case "ok":
+                                           Toast.makeText(profile.this,"เพิ่มรายการรถยนต์สำเร็จ",Toast.LENGTH_LONG).show();
+                                        break;
+                                        default:Toast.makeText(profile.this,"ไม่สามารถเพิ่มรายการได้",Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
@@ -167,7 +169,7 @@ public class profile extends AppCompatActivity {
                             String k =jsObject.get("car_service_id").getAsString();
                             name =jsObject.get("car_service_name").getAsString();
                             keyValuePairList.add(new KeyValuePair(k, name));
-                            //Toast.makeText(profile.this,""+arrayITem,Toast.LENGTH_LONG).show();
+
                         }
                         spinner.setAdapter(new ArrayAdapter<>(profile.this, android.R.layout.simple_spinner_dropdown_item,keyValuePairList));
                     }

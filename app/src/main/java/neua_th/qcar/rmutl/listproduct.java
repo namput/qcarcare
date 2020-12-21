@@ -42,7 +42,7 @@ String urlattribute;
                                 int len =result.size();
                                 for (int i=0;i<len;i++){
                                     JsonObject item = (JsonObject)result.get(i);
-                                    int aid = item.get();
+//                                    int aid = item.get();
 
                                 }
                             }
