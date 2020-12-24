@@ -3,6 +3,7 @@
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.rmutl.R;
@@ -14,8 +15,10 @@ import com.koushikdutta.ion.Ion;
 import java.util.ArrayList;
 
  public class listproduct extends AppCompatActivity {
-String url;
-String urlattribute;
+     String url;
+     String urlattribute;
+     ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +45,18 @@ String urlattribute;
                                 int len =result.size();
                                 for (int i=0;i<len;i++){
                                     JsonObject item = (JsonObject)result.get(i);
-//                                    int aid = item.get();
-
+                                    int aid = item.get("attribute_id").getAsInt();
+                                    String name = item.get("attribute_name").getAsString();
+                                    String size = item.get("size").getAsString();
+                                    int time = item.get("time").getAsInt();
+                                    itemArray.add(new AtCustomITem(aid,name,size,time));
+//                                    Toast.makeText(listproduct.this,""+name,Toast.LENGTH_SHORT).show();
                                 }
+                                AtCustomAdapter adapter = new AtCustomAdapter(getBaseContext(),itemArray);
+                                listView=(ListView)findViewById(R.id.listView3);
+                                listView.setAdapter(adapter);
                             }
-                            Toast.makeText(listproduct.this,""+result,Toast.LENGTH_SHORT).show();
+
                         }
                     });
         }

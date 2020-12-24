@@ -46,13 +46,14 @@ public class selectcarmember extends AppCompatActivity {
                         public void onCompleted(Exception e, JsonArray result) {
                             ArrayList<CMCustomITem> itemArray = new ArrayList<>();
                             if (result!=null){
-                                for (int i=0;i<result.size();i++){
+                                int len =result.size();
+                                for (int i=0;i<len;i++){
                                     JsonObject jsObject = (JsonObject)result.get(i);
-                                    int carmemberid = jsObject.get("car_member_id").getAsInt();
-                                    String service = jsObject.get("car_service_name").toString();
-                                    String color = jsObject.get("color_name").toString();
-                                    String carnumber = jsObject.get("car_member_number").toString();
-                                    String brand = jsObject.get("car_member_brand").toString();
+                                    int carmemberid = jsObject.get("id").getAsInt();
+                                    String service = jsObject.get("sername").toString();
+                                    String color = jsObject.get("color").toString();
+                                    String carnumber = jsObject.get("carnumber").toString();
+                                    String brand = jsObject.get("brand").toString();
                                     itemArray.add(new CMCustomITem(carmemberid,service,color,carnumber,brand));
                                 }
 

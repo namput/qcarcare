@@ -21,10 +21,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="first main1">
+    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="savecarmember">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/selectcarmember.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/selectcarmember.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Galaxy_Nexus_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -242,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608561430406</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="savecarmember">
+      <created>1608573440307</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608573440307</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +280,8 @@
     <MESSAGE value="main" />
     <MESSAGE value="first main" />
     <MESSAGE value="first main1" />
-    <option name="LAST_COMMIT_MESSAGE" value="first main1" />
+    <MESSAGE value="savecarmember" />
+    <option name="LAST_COMMIT_MESSAGE" value="savecarmember" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="53" key="#Plugins" timestamp="1607522724033">
@@ -324,22 +332,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="392" y="242" key="GradleDaemons/0.0.1536.824@0.0.1536.824" timestamp="1608148551110" />
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1608444632134">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1608575818763">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608444632134" />
-    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1608444632134">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608575818763" />
+    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1608575818763">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608444632134" />
-    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1608444632134">
+    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608575818763" />
+    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1608575818763">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608444632134" />
-    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1608444632134">
+    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608575818763" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1608575818763">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608444632134" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608575818763" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1608559899165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -360,6 +368,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.824@0.0.1536.824" timestamp="1607941322760" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608573376146">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608573376146" />
     <state x="577" y="274" key="git4idea.rebase.GitRebaseDialog" timestamp="1608560261074">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
