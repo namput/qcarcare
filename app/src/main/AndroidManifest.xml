@@ -11,20 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rmutl">
-        <activity android:name="neua_th.qcar.rmutl.listproduct"></activity>
-        <activity android:name="neua_th.qcar.rmutl.Carmember" />
-        <activity android:name=".Attribute" />
-        <activity android:name="neua_th.qcar.rmutl.selectcarmember" />
-        <activity android:name="neua_th.qcar.rmutl.QueueActivity" />
-        <activity android:name="neua_th.qcar.rmutl.QuenuActivity" />
-        <activity android:name=".queue" />
-        <activity android:name="neua_th.qcar.rmutl.MainActivity2" />
-        <activity android:name=".QueueActivity" />
-        <activity android:name=".carmember" />
+        <activity android:name="neua_th.qcar.rmutl.listproduct"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="neua_th.qcar.rmutl.selectcarmember"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="neua_th.qcar.rmutl.QueueActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="neua_th.qcar.rmutl.history"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="neua_th.qcar.rmutl.queue" />
+
         <activity
             android:name="neua_th.qcar.rmutl.contact"
             android:theme="@style/AppTheme.NoActionBar" />

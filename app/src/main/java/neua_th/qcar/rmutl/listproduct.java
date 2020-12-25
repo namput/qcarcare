@@ -1,8 +1,11 @@
- package neua_th.qcar.rmutl;
+  package neua_th.qcar.rmutl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,6 +21,7 @@ import java.util.ArrayList;
      String url;
      String urlattribute;
      ListView listView;
+     Button coform;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ import java.util.ArrayList;
         setContentView(R.layout.activity_listproduct);
         url =getString(R.string.url);
         urlattribute = getString(R.string.attribute);
+        coform=(Button)findViewById(R.id.coform);
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
             String carcareid = bundle.get("carcareid").toString();
@@ -49,16 +54,32 @@ import java.util.ArrayList;
                                     String name = item.get("attribute_name").getAsString();
                                     String size = item.get("size").getAsString();
                                     int time = item.get("time").getAsInt();
-                                    itemArray.add(new AtCustomITem(aid,name,size,time));
-//                                    Toast.makeText(listproduct.this,""+name,Toast.LENGTH_SHORT).show();
+                                    itemArray.add(new AtCustomITem(aid,name,size,time,false));
+//                                    Toast.makeText(listproduct.this,""+itemArray,Toast.LENGTH_SHORT).show();
                                 }
                                 AtCustomAdapter adapter = new AtCustomAdapter(getBaseContext(),itemArray);
                                 listView=(ListView)findViewById(R.id.listView3);
                                 listView.setAdapter(adapter);
+                                coform.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        ArrayList<Integer> gid=new ArrayList<>();
+                                        for (int i=0;i<itemArray.size();i++){
+                                            AtCustomITem item =itemArray.get(i);
+                                            if (item.isChecked==true){
+                                                gid.add(item.id);
+                                            }
+                                        }
+                                        
+                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
 
                         }
                     });
+
+
         }
     }
 }

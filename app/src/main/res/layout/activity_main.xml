@@ -93,6 +93,7 @@
                         android:drawableStart="@drawable/ic_lock"
                         android:drawableLeft="@drawable/ic_lock"
                         android:drawablePadding="12dp"
+                        android:focusable="true"
                         android:hint="@string/hint_password"
                         android:imeOptions="actionDone"
                         android:inputType="textPassword"
