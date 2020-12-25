@@ -71,7 +71,7 @@ import java.util.ArrayList;
                                             }
                                         }
                                         
-                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }

@@ -21,16 +21,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="savecarmember">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update q">
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/AtCustomITem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/AtCustomITem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_listproduct.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_listproduct.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/arow.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/attribute.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +76,7 @@
     <property name="android-custom-viewC:/Users/nampu/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="android-custom-viewC:/Users/nampu/AppData/Local/Android/Sdk/sources/android-30/android/widget/AdapterView.java_SELECTED" value="AdapterView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LoginTemplate-master/LoginTemplate-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="memory.settings.postsync.last.time.stamp" value="1608135814031" />
     <property name="multi-representation-previewC:/Users/nampu/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/nampu/AppData/Local/Android/Sdk/sources/android-30/android/widget/AdapterView.java_selected" value="Custom views" />
@@ -93,10 +86,6 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="neua_th.qcar.rmutl" />
-      <recent name="com.example.rmutl" />
-    </key>
     <key name="android.template.1463109589">
       <recent name="neua_th.qcar.rmutl" />
       <recent name="com.example.rmutl" />
@@ -105,7 +94,13 @@
       <recent name="neua_th.qcar.rmutl" />
       <recent name="com.example.rmutl" />
     </key>
+    <key name="android.template.233692758">
+      <recent name="com.example.rmutl" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="neua_th.qcar.rmutl" />
+    </key>
+    <key name="android.template.-1642819583">
       <recent name="neua_th.qcar.rmutl" />
     </key>
     <key name="android.template.-25613352">
@@ -128,7 +123,8 @@
     <key name="android.template.-153259502">
       <recent name="com.example.rmutl" />
     </key>
-    <key name="android.template.233692758">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="neua_th.qcar.rmutl" />
       <recent name="com.example.rmutl" />
     </key>
   </component>
@@ -265,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608824658801</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update q">
+      <created>1608913281506</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608913281506</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +300,8 @@
     <MESSAGE value="first main" />
     <MESSAGE value="first main1" />
     <MESSAGE value="savecarmember" />
-    <option name="LAST_COMMIT_MESSAGE" value="savecarmember" />
+    <MESSAGE value="update q" />
+    <option name="LAST_COMMIT_MESSAGE" value="update q" />
   </component>
   <component name="WindowStateProjectService">
     <state x="286" y="158" key="#PSD" timestamp="1608895940547">
@@ -388,10 +392,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.824@0.0.1536.824" timestamp="1607941322760" />
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608573376146">
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608913246343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608573376146" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608913246343" />
     <state x="577" y="274" key="git4idea.rebase.GitRebaseDialog" timestamp="1608560261074">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
