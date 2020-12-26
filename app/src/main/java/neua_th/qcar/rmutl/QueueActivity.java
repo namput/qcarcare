@@ -63,7 +63,7 @@ public class QueueActivity extends AppCompatActivity {
 
                                    QCustomITem item = itemArray.get(position);
                                    int cid =item.mid;
-                                   Intent intent = new Intent(QueueActivity.this, selectcarmember.class);
+                                   Intent intent = new Intent(QueueActivity.this, Carmember.class);
                                    intent.putExtra("carcareid", cid);
                                    intent.putExtra("mid", mid);
                                    startActivity(intent);
