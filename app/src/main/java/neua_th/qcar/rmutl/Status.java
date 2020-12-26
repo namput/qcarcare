@@ -3,14 +3,87 @@ package neua_th.qcar.rmutl;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rmutl.R;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import java.util.ArrayList;
 
 public class Status extends AppCompatActivity {
+    int morderqueue;
+    String mstatus;
+    int mqueue;
+    int mprogress;
+    int mtime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
-    }
+
+        String url = getString(R.string.url);
+        String urlqueue = getString(R.string.queue);
+        JsonArray itemArray = new JsonArray();
+        TextView orderqueue = (TextView)findViewById(R.id.qorder);
+        TextView status = (TextView)findViewById(R.id.status);
+        TextView queue = (TextView)findViewById(R.id.queue);
+        TextView progress = (TextView)findViewById(R.id.progress);
+        TextView time = (TextView)findViewById(R.id.time);
+
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null){
+            String id = bundle.getString("id");
+            String cmid = bundle.getString("cmid");
+            String cid = bundle.getString("cid");
+            ArrayList<Integer> attrid =bundle.getIntegerArrayList("getdata");
+
+            JsonObject jsonoject = new JsonObject();
+            jsonoject.addProperty("id",id);
+            jsonoject.addProperty("cmid",cmid);
+            jsonoject.addProperty("cid",cid);
+            itemArray.add(jsonoject);
+            for (int i=0;i<attrid.size();i++){
+                JsonObject jsObject = new JsonObject();
+                jsObject.addProperty("attribute",attrid.get(i));
+                itemArray.add(jsObject);
+
+            }
+//            Toast.makeText(Status.this,"ทดสอบ"+itemArray,Toast.LENGTH_LONG).show();
+            Ion.with(Status.this)
+                    .load(url+urlqueue)
+                    .setJsonArrayBody(itemArray)
+                    .asJsonArray()
+                    .setCallback(new FutureCallback<JsonArray>() {
+                        @Override
+                        public void onCompleted(Exception e, JsonArray result) {
+                            if (result!=null){
+                                JsonObject item = (JsonObject)result.get(0);
+                                morderqueue = item.get("queue_id").getAsInt();
+                                mstatus = item.get("status_name").getAsString();
+                                mqueue = item.get("queue").getAsInt();
+                                mprogress = item.get("progress").getAsInt();
+                                mtime = item.get("all_time").getAsInt();
+
+                                status.setText("สถานะ "+mstatus);
+                                orderqueue.setText("ลำดับคิว "+morderqueue);
+                                queue.setText("เหลือ "+mqueue+" คิว");
+                                progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
+                                time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
+
+//                                Toast.makeText(Status.this,"55"+status,Toast.LENGTH_LONG).show();
+                            }
+
+                        }
+                    });
+        }
+
 }
+
+    }

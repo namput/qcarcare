@@ -2,6 +2,7 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -70,7 +71,12 @@ import java.util.ArrayList;
                                                 gid.add(item.id);
                                             }
                                         }
-                                        
+                                        Intent intent = new Intent(listproduct.this,Status.class);
+                                        intent.putExtra("id",memberid);
+                                        intent.putExtra("cmid",carmemberid);
+                                        intent.putExtra("cid",carcareid);
+                                        intent.putExtra("getdata",gid);
+                                        startActivity(intent);
 //                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
                                     }
                                 });

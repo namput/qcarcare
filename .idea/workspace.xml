@@ -22,8 +22,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update q">
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/url.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/url.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[XNSNW20221000755]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -356,22 +359,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="392" y="242" key="GradleDaemons/0.0.1536.824@0.0.1536.824" timestamp="1608148551110" />
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1608898280043">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1608991026993">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608898280043" />
-    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1608898280043">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608991026993" />
+    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1608991026992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608898280043" />
-    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1608898280043">
+    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608991026992" />
+    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1608991026992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608898280043" />
-    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1608898280043">
+    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608991026992" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1608991026993">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608898280043" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608991026993" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1608559899165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
