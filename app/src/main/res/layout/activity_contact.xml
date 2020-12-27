@@ -127,6 +127,14 @@
                     android:layout_gravity="center"
                     android:background="@drawable/ic_facebook"
                     android:layout_height="80dp"/>
+                <Button
+                    android:id="@+id/logout"
+                    style="@style/Button2"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="ออกจากระบบ" />
 
             </LinearLayout>
 

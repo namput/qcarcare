@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -36,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPreferences = getPreferences(MODE_PRIVATE);
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         phone=(EditText)findViewById(R.id.phone);
         password=(EditText)findViewById(R.id.password);
         login=(Button)findViewById(R.id.login);
         crecate=(Button)findViewById(R.id.create);
         remember = (CheckBox)findViewById(R.id.remember);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null){
+            mPreferences.edit().clear().apply();
+        }
 
         //ลิงค์เชื่อต่อ
         url=getString(R.string.url);
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             putPreference();
         }else {
             mPreferences.edit().clear().apply();
-            Toast.makeText(MainActivity.this,"ไม่บันทึก",Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this,"ไม่บันทึก",Toast.LENGTH_LONG).show();
 
         }
         Ion.with(MainActivity.this)
