@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     String mphone;
     String mpassword;
     boolean mremember;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +44,15 @@ public class MainActivity extends AppCompatActivity {
         login=(Button)findViewById(R.id.login);
         crecate=(Button)findViewById(R.id.create);
         remember = (CheckBox)findViewById(R.id.remember);
-        Bundle bundle = getIntent().getExtras();
+        bundle = getIntent().getExtras();
         if (bundle!=null){
             mPreferences.edit().clear().apply();
+            Intent i = getBaseContext().getPackageManager().
+                    getLaunchIntentForPackage(getBaseContext().getPackageName());
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            finish();
         }
 
         //ลิงค์เชื่อต่อ
@@ -62,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         crecate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final ProgressDialog dialog=new ProgressDialog(MainActivity.this);
                 dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 dialog.setMessage("รอสักครู่...");
@@ -157,11 +165,12 @@ public class MainActivity extends AppCompatActivity {
                             String member_id=result.get("member_id").getAsString();
                             Intent intent=new Intent(MainActivity.this,Menu.class);
                             intent.putExtra("member_id",member_id);
-                            startActivity(intent);
                             finish();
+                            startActivity(intent);
+
                         }
                         else {
-                            Toast.makeText(MainActivity.this,"ไม่สามารถเข้าสู่ระบบได้"+url+urllogin,Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this,"ไม่สามารถเข้าสู่ระบบได้",Toast.LENGTH_LONG).show();
                         }
                     }
                 });

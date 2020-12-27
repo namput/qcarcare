@@ -28,6 +28,7 @@ class contact : AppCompatActivity() {
                 putExtra("status","0")
             }
             startActivity(intent)
+            finish()
         })
 
     }
