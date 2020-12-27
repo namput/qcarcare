@@ -21,15 +21,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update q">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Carmember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_carmember.xml" afterDir="false" />
+    <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QueueActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QueueActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/selectcarmember.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_selectcarmember.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/url.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/url.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,7 @@
     <property name="ApkExportedModule" value="rmutl.app" />
     <property name="BundleExportedModule" value="rmutl.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="XNSNW20221000755" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-19T06:13:53.029Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-27T09:51:22.092Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\nampu\AndroidStudioProjects\rmutl\app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="ExportApk.SignV1" value="true" />
@@ -372,22 +368,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="392" y="242" key="GradleDaemons/0.0.1536.824@0.0.1536.824" timestamp="1608148551110" />
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1609002195684">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1609046737015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609002195684" />
-    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1609002195684">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
+    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1609046737015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609002195684" />
-    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1609002195684">
+    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
+    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1609046737015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609002195684" />
-    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1609002195684">
+    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1609046737015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609002195684" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1608559899165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
