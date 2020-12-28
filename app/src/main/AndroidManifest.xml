@@ -11,15 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rmutl">
-        <activity android:name="neua_th.qcar.rmutl.ContactActivity"></activity>
+
         <activity android:name="neua_th.qcar.rmutl.Carmember"></activity>
         <activity android:name="neua_th.qcar.rmutl.Status" />
         <activity
             android:name="neua_th.qcar.rmutl.listproduct"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="neua_th.qcar.rmutl.selectcarmember"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="neua_th.qcar.rmutl.QueueActivity"
             android:theme="@style/AppTheme.NoActionBar" />
