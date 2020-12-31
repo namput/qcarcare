@@ -25,7 +25,8 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+        final String urlcheckstatus = getString(R.string.checkstatus);
+        final String url = getString(R.string.url);
         final LinearLayout profile = (LinearLayout) findViewById(R.id.profile);
         final LinearLayout mcontact = (LinearLayout) findViewById(R.id.contact);
         final LinearLayout queue = (LinearLayout) findViewById(R.id.queue);
@@ -39,7 +40,7 @@ public class Menu extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    final String url = getString(R.string.url);
+
                     final String urlshowprofile = getString(R.string.showprofile);
                     final ProgressDialog dialog = new ProgressDialog(Menu.this);
                     dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -83,9 +84,27 @@ public class Menu extends AppCompatActivity {
             queue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Menu.this, QueueActivity.class);
-                    intent.putExtra("member_id", mid);
-                    startActivity(intent);
+
+                    Ion.with(Menu.this)
+                            .load(url+urlcheckstatus)
+                            .setBodyParameter("id",mid)
+                            .asString()
+                            .setCallback(new FutureCallback<String>() {
+                                @Override
+                                public void onCompleted(Exception e, String result) {
+                                    if (result!=""){
+
+                                        Intent intent = new Intent(Menu.this, CheckStatus.class);
+                                        intent.putExtra("mid",mid);
+                                        startActivity(intent);
+                                    }
+                                    else {
+                                        Intent intent = new Intent(Menu.this, QueueActivity.class);
+                                        intent.putExtra("member_id", mid);
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
                 }
             });
 

@@ -1,6 +1,8 @@
 package neua_th.qcar.rmutl;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +13,21 @@ import com.example.rmutl.R;
 
 import java.util.ArrayList;
 
+
 public class QCustomITem {
     public int mid;
     public String mname;
     public int mnum;
     public int mscore;
-    public int malltime;
-    public QCustomITem(int id,String name,int num,int score,int alltime){
+    public int mhour;
+    public int minute;
+    public QCustomITem(int id, String name, int num, int score, int hour,int minute){
         this.mid = id;
         this.mname = name;
         this.mnum= num;
         this.mscore = score;
-        this.malltime = alltime;
+        this.mhour = hour;
+        this.minute = minute;
     }
         }
 class QViewHolder{
@@ -49,6 +54,7 @@ class QCustomAdapter extends ArrayAdapter {
         mITems=items;
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public View getView(int pos, View convertView, ViewGroup parent){
         if (convertView==null){
@@ -61,26 +67,31 @@ class QCustomAdapter extends ArrayAdapter {
         }
         QCustomITem item =mITems.get(pos);
         mHolder.textViewTitle.setText(item.mname);
-        mHolder.textViewContent1.setText("คิวที่เหลือ "+item.mnum+" คิว");
+        mHolder.textViewContent1.setTextColor(Color.parseColor("#64DD17"));
+        mHolder.textViewContent1.setText("ยังไม่มีคิว");
+        if (item.mnum>0){
+            mHolder.textViewContent1.setText("อีก "+item.mnum+" คิว");
+            mHolder.textViewContent1.setTextColor(Color.parseColor("#F57F17"));
+        }
+
         mHolder.textViewContent2.setText("rating "+item.mscore);
-        mHolder.textViewContent3.setText("เวลารวม "+item.malltime+" นาที");
+        String h="คิวว่าง";
+        mHolder.textViewContent3.setTextColor(Color.parseColor("#64DD17"));
+        if (item.minute>0 || item.mhour>0){
+            h="เหลืออีกประมาณ ";
+            mHolder.textViewContent3.setTextColor(Color.parseColor("#F57F17"));
+        }
+        if (item.mhour>0){
+            h+=item.mhour+" ชั่วโมง ";
+        }
+        if (item.minute>0){
+            h+=item.minute+" นาที";
+        }
+
+
+        mHolder.textViewContent3.setText(h);
 
         return convertView;
     }
 }
 
-//public class QCustomITem {
-//    public int mid;
-//    public String msername;
-//    public String mcarcolor;
-//    public String mcarnumber;
-//    public String mbrand;
-//
-//    public QCustomITem(int id,String sername,String color,String carnumber,String brand){
-//        this.mid=id;
-//        this.msername=sername;
-//        this.mcarcolor=color;
-//        this.mcarnumber=carnumber;
-//        this.mbrand=brand;
-//    }
-//}

@@ -95,15 +95,6 @@
                     android:text="เวลาที่ใช้ในการล้างรถประมาณ 0 นาที"
                     android:textColor="@color/md_pink_A700" />
 
-                <Button
-                    android:id="@+id/button_send"
-                    style="@style/Button2"
-                    android:layout_width="342dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="ยกเลิกคิว" />
 
             </LinearLayout>
 

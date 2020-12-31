@@ -2,8 +2,13 @@ package neua_th.qcar.rmutl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +21,7 @@ import com.koushikdutta.ion.Ion;
 import java.util.ArrayList;
 
 public class Status extends AppCompatActivity {
-    int morderqueue;
+    String morderqueue;
     String mstatus;
     int mqueue;
     int mprogress;
@@ -27,6 +32,7 @@ public class Status extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
+        Button button_send =(Button)findViewById(R.id.button_send);
         String url = getString(R.string.url);
         String urlqueue = getString(R.string.queue);
         JsonArray itemArray = new JsonArray();
@@ -65,19 +71,28 @@ public class Status extends AppCompatActivity {
                         public void onCompleted(Exception e, JsonArray result) {
                             if (result!=null){
                                 JsonObject item = (JsonObject)result.get(0);
-                                morderqueue = item.get("queue_id").getAsInt();
+                                morderqueue = item.get("queue_id").getAsString();
                                 mstatus = item.get("status_name").getAsString();
                                 mqueue = item.get("queue").getAsInt();
                                 mprogress = item.get("progress").getAsInt();
                                 mtime = item.get("all_time").getAsInt();
+                                String order= item.get("queue_order").getAsString();
 
                                 status.setText("สถานะ "+mstatus);
                                 orderqueue.setText("ลำดับคิว "+morderqueue);
                                 queue.setText("เหลือ "+mqueue+" คิว");
                                 progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
                                 time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
 
-//                                Toast.makeText(Status.this,"55"+status,Toast.LENGTH_LONG).show();
+                                        Intent intent=new Intent(Status.this,Menu.class);
+                                        intent.putExtra("member_id",id);
+                                        finish();
+                                        startActivity(intent);
+                                    }
+                                },3000);
                             }
 
                         }

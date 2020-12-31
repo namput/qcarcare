@@ -17,4 +17,7 @@
     <string name="listcarmember">listcarmember</string>
     <string name="attribute">attribute</string>
     <string name="queue">queue</string>
+    <string name="statusqueue">checkqueue</string>
+    <string name="checkstatus">checkstatus</string>
+    <string name="updatequeue">updatequeue</string>
 </resources>

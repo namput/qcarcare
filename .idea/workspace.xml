@@ -22,8 +22,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update login">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/CheckStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_check_status.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.aab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QCustomITem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QCustomITem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QueueActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/QueueActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/qrow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/qrow.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/url.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/url.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +43,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Galaxy_Nexus_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[XNSNW20221000755]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -64,8 +76,8 @@
   <component name="PropertiesComponent">
     <property name="ApkExportedModule" value="rmutl.app" />
     <property name="BundleExportedModule" value="rmutl.app" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_30_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-28T01:27:59.689Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="XNSNW20221000755" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-31T09:46:21.807Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\nampu\AndroidStudioProjects\rmutl\app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -83,28 +95,11 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="neua_th.qcar.rmutl" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="neua_th.qcar.rmutl" />
-      <recent name="com.example.rmutl" />
-    </key>
-    <key name="android.template.1463109589">
-      <recent name="neua_th.qcar.rmutl" />
-      <recent name="com.example.rmutl" />
-    </key>
     <key name="android.template.-1658154650">
       <recent name="neua_th.qcar.rmutl" />
     </key>
-    <key name="android.template.1212504842">
+    <key name="android.template.1463109589">
       <recent name="neua_th.qcar.rmutl" />
-      <recent name="com.example.rmutl" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="neua_th.qcar.rmutl" />
-    </key>
-    <key name="android.template.-25613352">
       <recent name="com.example.rmutl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -113,6 +108,25 @@
       <recent name="C:\Users\nampu\AndroidStudioProjects\rmutl\app\src\main\res\drawable" />
       <recent name="C:\Users\nampu\AndroidStudioProjects\rmutl\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\nampu\AndroidStudioProjects\rmutl\app\src\main\res\font" />
+    </key>
+    <key name="android.template.1212504842">
+      <recent name="neua_th.qcar.rmutl" />
+      <recent name="com.example.rmutl" />
+    </key>
+    <key name="android.template.-528292872">
+      <recent name="neua_th.qcar.rmutl" />
+    </key>
+    <key name="android.template.233692758">
+      <recent name="com.example.rmutl" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="neua_th.qcar.rmutl" />
+    </key>
+    <key name="android.template.-25613352">
+      <recent name="com.example.rmutl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="neua_th.qcar.rmutl" />
     </key>
     <key name="android.template.-1642819583">
       <recent name="neua_th.qcar.rmutl" />
@@ -124,7 +138,8 @@
     <key name="android.template.-153259502">
       <recent name="com.example.rmutl" />
     </key>
-    <key name="android.template.233692758">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="neua_th.qcar.rmutl" />
       <recent name="com.example.rmutl" />
     </key>
   </component>
@@ -289,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609085012776</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update login">
+      <created>1609136918422</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609136918422</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,10 +356,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1607522724033" />
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1609001840657">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1609408375988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609001840657" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609408375988" />
     <state x="417" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1608571689615">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -370,30 +392,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="605" y="202" key="AndroidCreateXmlResourceDialog/0.0.1536.824@0.0.1536.824" timestamp="1608349775617" />
-    <state x="549" y="167" width="623" height="546" key="FileChooserDialogImpl" timestamp="1608892544109">
+    <state x="549" y="167" width="623" height="546" key="FileChooserDialogImpl" timestamp="1609291718597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" width="623" height="546" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608892544109" />
+    <state x="549" y="167" width="623" height="546" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609291718597" />
     <state x="392" y="242" key="GradleDaemons" timestamp="1608148551110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="392" y="242" key="GradleDaemons/0.0.1536.824@0.0.1536.824" timestamp="1608148551110" />
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1609046737015">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1609410689385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
-    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1609046737015">
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609410689385" />
+    <state width="1491" height="210" key="GridCell.Tab.0.center" timestamp="1609410689385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
-    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1609046737015">
+    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609410689385" />
+    <state width="1491" height="210" key="GridCell.Tab.0.left" timestamp="1609410689385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
-    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1609046737015">
+    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609410689385" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right" timestamp="1609410689385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609046737015" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609410689385" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1608559899165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -402,10 +424,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="599" y="282" key="VCS.EditChangelistDialog/0.0.1536.824@0.0.1536.824" timestamp="1608560118297" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608561480202">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609245117359">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608561480202" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609245117358" />
     <state x="584" y="190" key="chooseDestDirectoryDialog" timestamp="1608357335096">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
