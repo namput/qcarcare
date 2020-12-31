@@ -94,6 +94,13 @@
                     android:layout_marginBottom="8dp"
                     android:text="เวลาที่ใช้ในการล้างรถประมาณ 0 นาที"
                     android:textColor="@color/md_pink_A700" />
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/simpleRatingBar"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
 
                 <Button
                     android:id="@+id/button_send"
@@ -104,6 +111,15 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="ยกเลิกคิว" />
+                <Button
+                    android:id="@+id/rating"
+                    style="@style/Button1"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="ให้คะแนน" />
 
             </LinearLayout>
 

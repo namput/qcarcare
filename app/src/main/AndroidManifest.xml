@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rmutl">
-        <activity android:name="neua_th.qcar.rmutl.CheckStatus"></activity>
+        <activity android:name="neua_th.qcar.rmutl.RatingActivity"></activity>
+        <activity android:name="neua_th.qcar.rmutl.CheckStatus" />
         <activity android:name="neua_th.qcar.rmutl.Carmember" />
         <activity android:name="neua_th.qcar.rmutl.Status" />
         <activity

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,17 @@ public class CheckStatus extends AppCompatActivity {
         TextView progress = (TextView)findViewById(R.id.progress);
         TextView time = (TextView)findViewById(R.id.time);
         Button button_send =(Button)findViewById(R.id.button_send);
+        RatingBar ratingBar=(RatingBar)findViewById(R.id.simpleRatingBar);
+        Button rating=(Button)findViewById(R.id.rating);
+
+        rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float getrating = ratingBar.getRating();
+
+                Toast.makeText(CheckStatus.this,""+getrating,Toast.LENGTH_LONG).show();
+            }
+        });
 
 
 
@@ -105,7 +117,7 @@ public class CheckStatus extends AppCompatActivity {
                                                 finish();
                                                 startActivity(intent);
                                             }
-                                        },3000);
+                                        },30000);
 
                                     }
                                 });

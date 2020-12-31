@@ -4,62 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+
+    android:gravity="center"
+
     android:padding="16dp">
 
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/image"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+                <LinearLayout
+                    android:id="@+id/contact"
+                    android:radius="20dp"
+                    android:gradientRadius="30dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/shap"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Main Title"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:fontFamily="@font/opun"
-            android:id="@+id/textView1"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sub Title"
-            android:fontFamily="@font/opun"
-            android:textColor="#a9a9a9"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/textView2"
-            />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/opun"
-            android:text="Sub Title"
-            android:textColor="#a9a9a9"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/opun"
-            android:text="Sub Title"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <!--so our layout is set-->
-
-    </LinearLayout>
-
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/colorBackground"
+                        android:text="ช่วยเหลือ"
+                        android:fontFamily="@font/opun"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:fontFamily="@font/opun"
+                        android:layout_marginTop="1dp"
+                        android:textColor="@color/colorBackground"
+                        android:text="ช่วยเหลือ"
+                        android:layout_gravity="left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/opun"
+                        android:textColor="@color/colorBackground"
+                        android:text="ช่วยเหลือ"
+                        android:layout_gravity="left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:fontFamily="@font/opun"
+                        android:layout_marginTop="1dp"
+                        android:textColor="@color/colorBackground"
+                        android:text="ช่วยเหลือ"
+                        android:layout_gravity="left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
 </LinearLayout>
