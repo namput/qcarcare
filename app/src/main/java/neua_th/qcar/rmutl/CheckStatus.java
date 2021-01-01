@@ -35,26 +35,12 @@ public class CheckStatus extends AppCompatActivity {
         String urlupdatequeue = getString(R.string.updatequeue);
         String url = getString(R.string.url);
         String statusqueue = getString(R.string.statusqueue);
-        JsonArray itemArray = new JsonArray();
         TextView orderqueue = (TextView)findViewById(R.id.qorder);
         TextView status = (TextView)findViewById(R.id.status);
         TextView queue = (TextView)findViewById(R.id.queue);
         TextView progress = (TextView)findViewById(R.id.progress);
         TextView time = (TextView)findViewById(R.id.time);
         Button button_send =(Button)findViewById(R.id.button_send);
-        RatingBar ratingBar=(RatingBar)findViewById(R.id.simpleRatingBar);
-        Button rating=(Button)findViewById(R.id.rating);
-
-        rating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                float getrating = ratingBar.getRating();
-
-                Toast.makeText(CheckStatus.this,""+getrating,Toast.LENGTH_LONG).show();
-            }
-        });
-
-
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){

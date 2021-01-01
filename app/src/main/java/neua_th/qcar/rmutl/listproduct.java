@@ -77,6 +77,7 @@ import java.util.ArrayList;
                                         intent.putExtra("cid",carcareid);
                                         intent.putExtra("getdata",gid);
                                         startActivity(intent);
+                                        finish();
 //                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
                                     }
                                 });

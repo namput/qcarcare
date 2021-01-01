@@ -20,4 +20,5 @@
     <string name="statusqueue">checkqueue</string>
     <string name="checkstatus">checkstatus</string>
     <string name="updatequeue">updatequeue</string>
+    <string name="updaterating">RatingReview</string>
 </resources>

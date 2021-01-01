@@ -86,13 +86,14 @@ public class Status extends AppCompatActivity {
                                 new Handler().postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-
+                                        Toast.makeText(Status.this, "จองคิวแล้ว",Toast.LENGTH_SHORT).show();
                                         Intent intent=new Intent(Status.this,Menu.class);
                                         intent.putExtra("member_id",id);
                                         finish();
                                         startActivity(intent);
+                                        finish();
                                     }
-                                },3000);
+                                },1);
                             }
 
                         }

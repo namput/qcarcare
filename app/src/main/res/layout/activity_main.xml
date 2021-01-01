@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_1"
+        android:background="@color/colorIcon"
         android:orientation="vertical"
         android:scrollbarThumbHorizontal="@null"
         android:scrollbarThumbVertical="@null">
@@ -27,9 +27,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_gravity="center|bottom"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/logo" />
+                android:src="@drawable/mainlogo" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -116,10 +115,10 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:background="@android:color/transparent"
-                        android:buttonTint="@color/md_pink_700"
+                        android:buttonTint="@color/md_black_1000"
                         android:textStyle="bold"
-                        android:textColor="@color/md_pink_A700"
-                       android:text="บันทึกหารเข้าสู่ระบบ"
+                        android:textColor="@color/md_black_1000"
+                       android:text="บันทึกการเข้าสู่ระบบ"
                         android:textSize="18dp"
                         android:minWidth="320dp"
                         android:minHeight="50dp" />
@@ -143,11 +142,11 @@
                 android:layout_marginTop="16dp"
                 android:text="สมัครสมาชิก" />
             <ImageView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/tt" />
+                app:srcCompat="@drawable/loginlogout" />
         </LinearLayout>
 
     </RelativeLayout>
