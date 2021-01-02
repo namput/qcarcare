@@ -24,4 +24,6 @@
     <string name="it">สาขาเทคโนโลยีสารสนเทศ</string>
     <string name="sic">วิทยาศาสตร์และเทคโนโลยีการเกษตร</string>
     <string name="rmutl">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

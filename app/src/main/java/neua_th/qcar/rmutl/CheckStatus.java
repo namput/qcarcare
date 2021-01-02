@@ -3,25 +3,21 @@ package neua_th.qcar.rmutl;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.rmutl.R;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-
-import org.json.JSONArray;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -46,6 +42,9 @@ public class CheckStatus extends AppCompatActivity {
     RelativeLayout relativeLayout;
     SwipeRefreshLayout swipeContainer;
     String stringDate;
+    AlertDialog.Builder dialogBuilder;
+    View layoutView;
+    AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,24 +126,10 @@ public class CheckStatus extends AppCompatActivity {
                             button_send.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    Ion.with(CheckStatus.this)
-                                            .load(url+urlupdatequeue)
-                                            .setBodyParameter("qid", morderqueue)
-                                            .setBodyParameter("statusid","3")
-                                            .setBodyParameter("datenow",stringDate)
-                                            .asString()
-                                            .setCallback(new FutureCallback<String>() {
-                                                @Override
-                                                public void onCompleted(Exception e, String result) {
-                                                    status.setTextColor(Color.parseColor("#BF360C"));
-                                                    status.setText("สถานะ เสร็จสิ้น");
-                                                    queue.setText(" ");
-                                                    progress.setText(" ");
-                                                    time.setText(" ");
-                                                    swipeContainer.setRefreshing(false);
 
-                                                }
-                                            });
+                                    showAlertDialog(R.layout.fragment_custom_dialog);
+//
+
                                 }
                             });
                             swipeContainer.setRefreshing(false);
@@ -153,7 +138,68 @@ public class CheckStatus extends AppCompatActivity {
                     }
                 });
             }
+    private void showAlertDialog(int layout){
+        dialogBuilder = new AlertDialog.Builder(CheckStatus.this);
+        layoutView = getLayoutInflater().inflate(layout, null);
+        Button btnOk = layoutView.findViewById(R.id.btnOk);
+        Button btnCancel = layoutView.findViewById(R.id.btnCancel);
+        dialogBuilder.setView(layoutView);
+        alertDialog = dialogBuilder.create();
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Ion.with(CheckStatus.this)
+                        .load(url+urlupdatequeue)
+                        .setBodyParameter("qid", morderqueue)
+                        .setBodyParameter("statusid","3")
+                        .setBodyParameter("datenow",stringDate)
+                        .asString()
+                        .setCallback(new FutureCallback<String>() {
+                            @Override
+                            public void onCompleted(Exception e, String result) {
+                                alertDialog.dismiss();
+                                status.setTextColor(Color.parseColor("#BF360C"));
+                                relativeLayout.setBackgroundColor(getColor(R.color.md_amber_900));
+                                status.setText("สถานะ เสร็จสิ้น");
+                                queue.setText(" ");
+                                progress.setText(" ");
+                                time.setText(" ");
+                                swipeContainer.setRefreshing(false);
 
+                                layoutView = getLayoutInflater().inflate(R.layout.fragment_custom_dialogs, null);
+                                dialogBuilder.setView(layoutView);
+                                alertDialog = dialogBuilder.create();
+                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                alertDialog.show();
+                                Button getout = layoutView.findViewById(R.id.getout);
+                                getout.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        alertDialog.dismiss();
+                                        finish();
+                                        startActivity(new Intent(CheckStatus.this,Menu.class).putExtra("member_id",id));
+
+                                    }
+                                });
+
+
+                            }
+                        });
+
+            }
+
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+    }
 }
 
 
