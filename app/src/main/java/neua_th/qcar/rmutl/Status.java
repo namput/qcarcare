@@ -67,7 +67,7 @@ public class Status extends AppCompatActivity {
                 itemArray.add(jsObject);
 
             }
-            Toast.makeText(Status.this,"ทดสอบ"+stringDate,Toast.LENGTH_LONG).show();
+
             Ion.with(Status.this)
                     .load(url+urlqueue)
                     .setJsonArrayBody(itemArray)
