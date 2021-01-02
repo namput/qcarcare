@@ -52,7 +52,7 @@ public class history extends AppCompatActivity {
                                     String cmnumber =item.get("car_member_number").getAsString();
                                     String sername =item.get("car_service_name").getAsString();
                                     itemArray.add(new HCustomITem(qid,carcare,date,cmnumber,sername));
-//                                    Toast.makeText(history.this,""+itemArray,Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(history.this,""+date,Toast.LENGTH_SHORT).show();
                                 }
                             }
                             HCustomAdapter adapter = new HCustomAdapter(getBaseContext(),itemArray);

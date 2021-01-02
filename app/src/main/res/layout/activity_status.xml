@@ -4,21 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/md_yellow_600"
     tools:context="neua_th.qcar.rmutl.Status">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/actionbarOpacity"
-        app:theme="@style/TransparentToolbar"
-        app:navigationIcon="@drawable/ic_back"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
         android:fillViewport="true"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
@@ -36,12 +27,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:orientation="vertical">
-
                 <ImageView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    app:srcCompat="@drawable/forget_password"
+                    app:srcCompat="@drawable/q"
+                    android:layout_marginBottom="20dp"
                     android:contentDescription="TODO" />
                 <TextView
                     android:id="@+id/qorder"

@@ -4,21 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    tools:context="neua_th.qcar.rmutl.CheckStatus">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/actionbarOpacity"
-        app:theme="@style/TransparentToolbar"
-        app:navigationIcon="@drawable/ic_back"/>
+    android:id="@+id/rela"
+    tools:context="neua_th.qcar.rmutl.CheckStatus">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
         android:fillViewport="true"
         android:fitsSystemWindows="true"
         android:orientation="vertical"

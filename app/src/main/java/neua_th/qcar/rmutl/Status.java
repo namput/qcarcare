@@ -18,7 +18,9 @@ import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Status extends AppCompatActivity {
     String morderqueue;
@@ -42,7 +44,8 @@ public class Status extends AppCompatActivity {
         TextView progress = (TextView)findViewById(R.id.progress);
         TextView time = (TextView)findViewById(R.id.time);
 
-
+        Date date = new Date();
+        String stringDate = DateFormat.getDateInstance().format(date);
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
             String id = bundle.getString("id");
@@ -50,10 +53,13 @@ public class Status extends AppCompatActivity {
             String cid = bundle.getString("cid");
             ArrayList<Integer> attrid =bundle.getIntegerArrayList("getdata");
 
+
             JsonObject jsonoject = new JsonObject();
             jsonoject.addProperty("id",id);
             jsonoject.addProperty("cmid",cmid);
             jsonoject.addProperty("cid",cid);
+            jsonoject.addProperty("createdate",stringDate);
+
             itemArray.add(jsonoject);
             for (int i=0;i<attrid.size();i++){
                 JsonObject jsObject = new JsonObject();
@@ -61,7 +67,7 @@ public class Status extends AppCompatActivity {
                 itemArray.add(jsObject);
 
             }
-//            Toast.makeText(Status.this,"ทดสอบ"+itemArray,Toast.LENGTH_LONG).show();
+            Toast.makeText(Status.this,"ทดสอบ"+stringDate,Toast.LENGTH_LONG).show();
             Ion.with(Status.this)
                     .load(url+urlqueue)
                     .setJsonArrayBody(itemArray)

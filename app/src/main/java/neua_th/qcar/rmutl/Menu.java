@@ -17,6 +17,9 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 import com.koushikdutta.ion.IonContext;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 public class Menu extends AppCompatActivity {
 
     private String mid;
@@ -42,11 +45,7 @@ public class Menu extends AppCompatActivity {
 
 
                     final String urlshowprofile = getString(R.string.showprofile);
-                    final ProgressDialog dialog = new ProgressDialog(Menu.this);
-                    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                    dialog.setMessage("รอสักครู่...");
-                    dialog.setIndeterminate(true);
-                    dialog.show();
+
                     Ion.with(Menu.this)
                             .load(url + urlshowprofile)
                             .setBodyParameter("id", mid)
@@ -55,7 +54,6 @@ public class Menu extends AppCompatActivity {
                             .setCallback(new FutureCallback<JsonObject>() {
                                 @Override
                                 public void onCompleted(Exception e, JsonObject result) {
-                                    dialog.dismiss();
                                     if (result != null) {
                                         String member_id = result.get("member_id").getAsString();
                                         String member_phone = result.get("member_phone").getAsString();
@@ -84,25 +82,27 @@ public class Menu extends AppCompatActivity {
             queue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Date date = new Date();
+                    String stringDate = DateFormat.getDateInstance().format(date);
                     Ion.with(Menu.this)
                             .load(url+urlcheckstatus)
                             .setBodyParameter("id",mid)
+                            .setBodyParameter("datenow",stringDate)
                             .asString()
                             .setCallback(new FutureCallback<String>() {
                                 @Override
                                 public void onCompleted(Exception e, String result) {
+                                    Intent intent;
                                     if (result!=""){
 
-                                        Intent intent = new Intent(Menu.this, CheckStatus.class);
+                                        intent = new Intent(Menu.this, CheckStatus.class);
                                         intent.putExtra("mid",mid);
-                                        startActivity(intent);
                                     }
                                     else {
-                                        Intent intent = new Intent(Menu.this, QueueActivity.class);
+                                        intent = new Intent(Menu.this, QueueActivity.class);
                                         intent.putExtra("member_id", mid);
-                                        startActivity(intent);
                                     }
+                                    startActivity(intent);
                                 }
                             });
                 }

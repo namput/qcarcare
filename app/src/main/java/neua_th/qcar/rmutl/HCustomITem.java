@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import com.example.rmutl.R;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class HCustomITem {
     public String qid;
@@ -30,14 +32,10 @@ public class HCustomITem {
 class HViewHolder{
     public TextView textViewTitle;
     public TextView textViewContent1;
-    public TextView textViewContent2;
-    public TextView textViewContent3;
 
     public HViewHolder(View cv){
         textViewTitle=(TextView)cv.findViewById(R.id.textView1);
         textViewContent1=(TextView)cv.findViewById(R.id.textView2);
-        textViewContent2=(TextView)cv.findViewById(R.id.textView);
-        textViewContent3=(TextView)cv.findViewById(R.id.textView3);
     }
 }
 
@@ -64,9 +62,9 @@ class HCustomAdapter extends ArrayAdapter {
         }
         HCustomITem item =mITems.get(pos);
         mHolder.textViewTitle.setText(item.carcare);
-        mHolder.textViewContent1.setText(item.sername);
-        mHolder.textViewContent2.setText(item.cmnumber);
-        mHolder.textViewContent3.setText(item.date);
+
+        String content=item.sername+" ทะเบียนรถ "+item.cmnumber+"\n วันที่ "+item.date;
+        mHolder.textViewContent1.setText(content);
 
         return convertView;
     }

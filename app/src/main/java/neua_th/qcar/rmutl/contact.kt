@@ -20,8 +20,9 @@ class contact : AppCompatActivity() {
         val button=findViewById<Button>(R.id.logout)
 
         imageButton.setOnClickListener(View.OnClickListener {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/a.aek1998"))
-            startActivity(i) })
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=https://m.facebook.com/iT.RMUTLT/")))
+        })
+
         button.setOnClickListener(View.OnClickListener {
             val message="0"
             val intent = Intent(this, MainActivity::class.java).apply {

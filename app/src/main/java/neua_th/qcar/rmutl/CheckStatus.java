@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class CheckStatus extends AppCompatActivity {
     String morderqueue;
@@ -41,14 +45,17 @@ public class CheckStatus extends AppCompatActivity {
         TextView progress = (TextView)findViewById(R.id.progress);
         TextView time = (TextView)findViewById(R.id.time);
         Button button_send =(Button)findViewById(R.id.button_send);
+        RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.rela);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
             id= bundle.getString("mid");
-
+            Date date = new Date();
+            String stringDate = DateFormat.getDateInstance().format(date);
             Ion.with(CheckStatus.this)
                     .load(url+statusqueue)
                     .setBodyParameter("id",id)
+                    .setBodyParameter("datenow",stringDate)
                     .asJsonArray()
                     .setCallback(new FutureCallback<JsonArray>() {
                         @Override
@@ -62,14 +69,20 @@ public class CheckStatus extends AppCompatActivity {
                                 mqueue = item.get("queue").getAsInt();
                                 mprogress = item.get("progress").getAsInt();
                                 mtime = item.get("all_time").getAsInt();
+                                if (mstatusId==1){
+                                    status.setTextColor(Color.parseColor("#00C853"));
+                                    relativeLayout.setBackgroundColor(getColor(R.color.md_blue_grey_700));
+                                }
                                 if (mstatusId==2){
                                     status.setTextColor(Color.parseColor("#00C853"));
+                                    relativeLayout.setBackgroundColor(getColor(R.color.md_light_blue_800));
                                 }
                                 if (mstatusId==3){
                                     status.setTextColor(Color.parseColor("#BF360C"));
+                                    relativeLayout.setBackgroundColor(getColor(R.color.md_amber_900));
                                 }
 
-                                status.setText("สถานะ "+mstatus);
+                                status.setText(mstatus);
                                 orderqueue.setText("ลำดับคิว "+order);
                                 queue.setText("เหลือ "+mqueue+" คิว");
                                 progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
@@ -82,6 +95,7 @@ public class CheckStatus extends AppCompatActivity {
                                                 .load(url+urlupdatequeue)
                                                 .setBodyParameter("qid", morderqueue)
                                                 .setBodyParameter("statusid","3")
+                                                .setBodyParameter("datenow",stringDate)
                                                 .asString()
                                                 .setCallback(new FutureCallback<String>() {
                                                     @Override
@@ -92,19 +106,9 @@ public class CheckStatus extends AppCompatActivity {
                                                         progress.setText(" ");
                                                         time.setText(" ");
 
+
                                                     }
                                                 });
-                                        new Handler().postDelayed(new Runnable() {
-                                            @Override
-                                            public void run() {
-
-                                                Intent intent=new Intent(CheckStatus.this,Menu.class);
-                                                intent.putExtra("member_id",id);
-                                                finish();
-                                                startActivity(intent);
-                                            }
-                                        },30000);
-
                                     }
                                 });
                             }

@@ -16,6 +16,7 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,11 +37,14 @@ public class QueueActivity extends AppCompatActivity {
         url= getString(R.string.url);
         urllistcarcare= getString(R.string.listcarcare);
         urlcheckstatus = getString(R.string.checkstatus);
+        Date date = new Date();
+        String stringDate = DateFormat.getDateInstance().format(date);
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null) {
             String mid = bundle.getString("member_id");
             Ion.with(QueueActivity.this)
                     .load(url + urllistcarcare)
+                    .setBodyParameter("datenow",stringDate)
                     .asJsonArray()
                     .setCallback(new FutureCallback<JsonArray>() {
                         @Override
@@ -61,6 +65,7 @@ public class QueueActivity extends AppCompatActivity {
                                 }
                             }
                             QCustomAdapter adapter = new QCustomAdapter(getBaseContext(), itemArray);
+//                            Toast.makeText(QueueActivity.this,"test"+adapter,Toast.LENGTH_SHORT).show();
                             listView = (ListView) findViewById(R.id.listView);
                             listView.setAdapter(adapter);
 

@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rmutl.R;
 
@@ -33,14 +35,12 @@ public class QCustomITem {
 class QViewHolder{
     public TextView textViewTitle;
     public TextView textViewContent1;
-    public TextView textViewContent2;
-    public TextView textViewContent3;
+    public RatingBar ratingBar;
 
     public QViewHolder(View cv){
         textViewTitle=(TextView)cv.findViewById(R.id.textView1);
         textViewContent1=(TextView)cv.findViewById(R.id.textView2);
-        textViewContent2=(TextView)cv.findViewById(R.id.textView);
-        textViewContent3=(TextView)cv.findViewById(R.id.textView3);
+        ratingBar=(RatingBar)cv.findViewById(R.id.ratingcarcare);
     }
 }
 class QCustomAdapter extends ArrayAdapter {
@@ -68,29 +68,26 @@ class QCustomAdapter extends ArrayAdapter {
         QCustomITem item =mITems.get(pos);
         mHolder.textViewTitle.setText(item.mname);
         mHolder.textViewContent1.setTextColor(Color.parseColor("#64DD17"));
-        mHolder.textViewContent1.setText("ยังไม่มีคิว");
+//        mHolder.textViewContent1.setText("คิวว่าง");
+        String content="คิวว่าง";
         if (item.mnum>0){
-            mHolder.textViewContent1.setText("อีก "+item.mnum+" คิว");
+            content="เหลืออีก "+item.mnum+" คิว";
             mHolder.textViewContent1.setTextColor(Color.parseColor("#F57F17"));
         }
 
-        mHolder.textViewContent2.setText("rating "+item.mscore);
-        String h="คิวว่าง";
-        mHolder.textViewContent3.setTextColor(Color.parseColor("#64DD17"));
         if (item.minute>0 || item.mhour>0){
-            h="เหลืออีกประมาณ ";
-            mHolder.textViewContent3.setTextColor(Color.parseColor("#F57F17"));
+            content+="  เหลืออีกประมาณ ";
         }
         if (item.mhour>0){
-            h+=item.mhour+" ชั่วโมง ";
+            content+=item.mhour+" ชั่วโมง ";
         }
         if (item.minute>0){
-            h+=item.minute+" นาที";
+            content+=item.minute+" นาที";
         }
+        mHolder.textViewContent1.setText(content);
+        mHolder.ratingBar.setRating(item.mscore);
 
-
-        mHolder.textViewContent3.setText(h);
-
+        mHolder.ratingBar.setIsIndicator(true);
         return convertView;
     }
 }
