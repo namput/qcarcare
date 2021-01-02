@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/md_deep_orange_900">
+android:background="@color/colorBackground">
 
 <ImageView
     android:id="@+id/imageView"
@@ -30,7 +30,7 @@ android:background="@color/md_deep_orange_900">
     android:layout_marginEnd="8dp"
     android:layout_marginRight="8dp"
     android:text="คุณยกเลิกการจองคิวแล้ว"
-    android:textColor="@android:color/white"
+    android:textColor="@color/colorAccent"
     android:textSize="26sp"
     android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
@@ -47,28 +47,25 @@ android:background="@color/md_deep_orange_900">
     android:layout_marginEnd="8dp"
     android:layout_marginRight="8dp"
     android:text="กลับสู่เมนูหลัก"
-    android:textColor="@android:color/white"
+    android:textColor="@color/colorAccent"
     android:textSize="22sp"
     android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-<Button
-    style="@style/Button4"
-    android:id="@+id/getout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginBottom="8dp"
-    android:text="ย้อนกลับ"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    <Button
+        android:id="@+id/getout"
+        style="@style/Button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="ย้อนกลับ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

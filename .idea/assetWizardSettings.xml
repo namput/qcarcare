@@ -309,7 +309,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/task_alt/baseline_task_alt_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/done_all/baseline_done_all_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -319,8 +319,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="0edc6b" />
-                            <entry key="outputName" value="ic_baseline_task_alt_24" />
+                            <entry key="color" value="2a58dc" />
+                            <entry key="outputName" value="ic_baseline_done_all_24" />
                             <entry key="sourceFile" value="D:\main_background.svg" />
                           </map>
                         </option>

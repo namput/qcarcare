@@ -3,14 +3,18 @@ package neua_th.qcar.rmutl;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rmutl.R;
@@ -35,6 +39,13 @@ public class profile extends AppCompatActivity {
     Spinner spinnercolor;
     ArrayList<String> carlist;
     ArrayList<CustomItem> color;
+    AlertDialog.Builder dialogBuilder;
+    View layoutView;
+    AlertDialog alertDialog;
+    Button getout;
+    TextView content;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +64,9 @@ public class profile extends AppCompatActivity {
         EditText numcar=(EditText)findViewById(R.id.number);
         EditText brand=(EditText)findViewById(R.id.brand);
         Button savecar=(Button)findViewById(R.id.savecar);
-       
+
+
+        dialogBuilder = new AlertDialog.Builder(profile.this);
 
         carlist =new ArrayList<>();
         spinner =findViewById(R.id.carsize);
@@ -76,11 +89,7 @@ public class profile extends AppCompatActivity {
             savename.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final ProgressDialog dialog=new ProgressDialog(profile.this);
-                    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                    dialog.setMessage("รอสักครู่...");
-                    dialog.setIndeterminate(true);
-                    dialog.show();
+
                     String changname=mname.getText().toString();
 
                     Ion.with(profile.this)
@@ -92,27 +101,55 @@ public class profile extends AppCompatActivity {
                             .setCallback(new FutureCallback<JsonObject>() {
                                 @Override
                                 public void onCompleted(Exception e, JsonObject result) {
-                                    dialog.dismiss();
+
+
                                     if (result!=null){
                                         String member_name=result.get("member_name").getAsString();
                                         mname.setText(member_name);
-                                        Toast.makeText(profile.this,"เปลี่ยนชื่อสำเสร็จ",Toast.LENGTH_LONG).show();
+
+                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_success, null);
+                                        getout=layoutView.findViewById(R.id.getout);
+                                        content =layoutView.findViewById(R.id.contact);
+                                        dialogBuilder.setView(layoutView);
+                                        alertDialog = dialogBuilder.create();
+                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                        alertDialog.show();
+                                        getout.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                alertDialog.dismiss();
+
+                                            }
+                                        });
+
                                     }
                                     else {
-                                        Toast.makeText(profile.this,"ไม่สามารถเปลี่ยนชื่อได้",Toast.LENGTH_LONG).show();
+                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_fail, null);
+                                        getout=layoutView.findViewById(R.id.getout);
+                                        content =layoutView.findViewById(R.id.contact);
+                                        dialogBuilder.setView(layoutView);
+                                        alertDialog = dialogBuilder.create();
+                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                        alertDialog.show();
+                                        getout.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                alertDialog.dismiss();
+
+                                            }
+                                        });
                                     }
                                 }
                             });
                 }
             });
+
             savecar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final ProgressDialog dialog=new ProgressDialog(profile.this);
-                    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                    dialog.setMessage("รอสักครู่...");
-                    dialog.setIndeterminate(true);
-                    dialog.show();
+
                     Object selectedItem = spinner.getSelectedItemId();
                     String selectedText = selectedItem.toString ();
                     mnumcar=numcar.getText().toString();
@@ -133,17 +170,47 @@ public class profile extends AppCompatActivity {
                             .setCallback(new FutureCallback<String>() {
                                 @Override
                                 public void onCompleted(Exception e, String result) {
-                                    dialog.dismiss();
+
                                     switch (result){
                                        case "ok":
-                                           Toast.makeText(profile.this,"เพิ่มรายการรถยนต์สำเร็จ",Toast.LENGTH_LONG).show();
+                                           layoutView = getLayoutInflater().inflate(R.layout.dialog_success, null);
+                                           getout=layoutView.findViewById(R.id.getout);
+                                           content =layoutView.findViewById(R.id.contact);
+                                           dialogBuilder.setView(layoutView);
+                                           alertDialog = dialogBuilder.create();
+                                           alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                           alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                           alertDialog.show();
+                                           getout.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   alertDialog.dismiss();
+
+                                               }
+                                           });
                                         break;
-                                        default:Toast.makeText(profile.this,"ไม่สามารถเพิ่มรายการได้",Toast.LENGTH_LONG).show();
+                                        default:
+                                            layoutView = getLayoutInflater().inflate(R.layout.dialog_fail, null);
+                                            getout=layoutView.findViewById(R.id.getout);
+                                            content =layoutView.findViewById(R.id.contact);
+                                            dialogBuilder.setView(layoutView);
+                                            alertDialog = dialogBuilder.create();
+                                            alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                            alertDialog.show();
+                                            getout.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    alertDialog.dismiss();
+
+                                                }
+                                            });
                                     }
                                 }
                             });
                 }
             });
+
 
         }
         else {

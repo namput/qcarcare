@@ -2,13 +2,16 @@ package neua_th.qcar.rmutl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,12 @@ public class Status extends AppCompatActivity {
     int mqueue;
     int mprogress;
     int mtime;
+    AlertDialog.Builder dialogBuilder;
+    View layoutView;
+    AlertDialog alertDialog;
+    Button getout;
+    TextView content;
+    EditText reviewcustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,7 @@ public class Status extends AppCompatActivity {
         TextView queue = (TextView)findViewById(R.id.queue);
         TextView progress = (TextView)findViewById(R.id.progress);
         TextView time = (TextView)findViewById(R.id.time);
+        dialogBuilder = new AlertDialog.Builder(Status.this);
 
         Date date = new Date();
         String stringDate = DateFormat.getDateInstance().format(date);
@@ -89,19 +99,41 @@ public class Status extends AppCompatActivity {
                                 queue.setText("เหลือ "+mqueue+" คิว");
                                 progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
                                 time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(Status.this, "จองคิวแล้ว",Toast.LENGTH_SHORT).show();
-                                        Intent intent=new Intent(Status.this,Menu.class);
-                                        intent.putExtra("member_id",id);
-                                        finish();
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                },1);
-                            }
+//                                new Handler().postDelayed(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+                                //                                },1);
+//                            }
+                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_queue, null);
+                                        getout=layoutView.findViewById(R.id.getout);
+                                        content =layoutView.findViewById(R.id.contact);
+                                        dialogBuilder.setView(layoutView);
+                                        alertDialog = dialogBuilder.create();
+                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                        alertDialog.show();
+                                        getout.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                alertDialog.dismiss();
 
+                                                layoutView = getLayoutInflater().inflate(R.layout.dialog_queue_success, null);
+                                                getout=layoutView.findViewById(R.id.getout);
+                                                content =layoutView.findViewById(R.id.contact);
+                                                dialogBuilder.setView(layoutView);
+                                                alertDialog = dialogBuilder.create();
+                                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                alertDialog.show();
+
+                                                Intent intent=new Intent(Status.this,Menu.class);
+                                                intent.putExtra("member_id",id);
+                                                finish();
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        });
+                                    }
                         }
                     });
         }

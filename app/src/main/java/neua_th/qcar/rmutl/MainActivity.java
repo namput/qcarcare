@@ -2,15 +2,19 @@ package neua_th.qcar.rmutl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rmutl.R;
@@ -32,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     String mpassword;
     boolean mremember;
     Bundle bundle;
+    AlertDialog.Builder dialogBuilder;
+    View layoutView;
+    AlertDialog alertDialog;
+    Button getout;
+    TextView content;
+    EditText reviewcustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         login=(Button)findViewById(R.id.login);
         crecate=(Button)findViewById(R.id.create);
         remember = (CheckBox)findViewById(R.id.remember);
+        reviewcustomer = (EditText)findViewById(R.id.reviewcustomer);
+        dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         bundle = getIntent().getExtras();
         if (bundle!=null){
             mPreferences.edit().clear().apply();
@@ -95,7 +107,22 @@ public class MainActivity extends AppCompatActivity {
                                     finish();
                                 }
                                 else {
-                                    Toast.makeText(MainActivity.this,"ไม่สามารถเข้าสู่ระบบได้",Toast.LENGTH_LONG).show();
+
+                                    layoutView = getLayoutInflater().inflate(R.layout.dialog_create_fail, null);
+                                    getout=layoutView.findViewById(R.id.getout);
+                                    content =layoutView.findViewById(R.id.contact);
+                                    dialogBuilder.setView(layoutView);
+                                    alertDialog = dialogBuilder.create();
+                                    alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                    alertDialog.show();
+                                    getout.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            alertDialog.dismiss();
+
+                                        }
+                                    });
                                 }
                             }
                         });
@@ -170,7 +197,22 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                         else {
-                            Toast.makeText(MainActivity.this,"ไม่สามารถเข้าสู่ระบบได้",Toast.LENGTH_LONG).show();
+
+                            layoutView = getLayoutInflater().inflate(R.layout.dialog_login_fail, null);
+                            getout=layoutView.findViewById(R.id.getout);
+                            content =layoutView.findViewById(R.id.contact);
+                            dialogBuilder.setView(layoutView);
+                            alertDialog = dialogBuilder.create();
+                            alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            alertDialog.show();
+                            getout.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    alertDialog.dismiss();
+
+                                }
+                            });
                         }
                     }
                 });
