@@ -24,7 +24,7 @@
                 android:id="@+id/ViewTop"
                 android:layout_width="match_parent"
                 android:layout_height="128dp"
-                android:background="@color/md_teal_A700"
+                android:background="@color/md_amber_400"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:contentDescription="ยืนยันรายการ"
-                android:src="@drawable/ic_baseline_done_all_24"
+                android:src="@drawable/ic_baseline_contact_support_24"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ViewTop"
                 app:layout_constraintEnd_toEndOf="@+id/ViewTop"
@@ -64,20 +64,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ViewTop" />
 
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="144dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="60dp"
+                android:background="#f44336"
+                android:text="ยกเลิก"
+                android:textColor="#FFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnOk"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
 
             <Button
-                android:id="@+id/getout"
-                style="@style/Button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="105dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="106dp"
-                android:gravity="center"
+                android:id="@+id/btnOk"
+                android:layout_width="144dp"
+                android:layout_height="38dp"
+                android:background="#00c853"
                 android:text="ตกลง"
+                android:textColor="#FFF"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel"
+                app:layout_constraintTop_toTopOf="@+id/btnCancel" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

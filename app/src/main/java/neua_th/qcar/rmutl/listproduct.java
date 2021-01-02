@@ -2,12 +2,16 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rmutl.R;
@@ -23,6 +27,12 @@ import java.util.ArrayList;
      String urlattribute;
      ListView listView;
      Button coform;
+     AlertDialog.Builder dialogBuilder;
+     View layoutView;
+     AlertDialog alertDialog;
+     Button btnOk;
+     Button btnCancel;
+     TextView content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,8 @@ import java.util.ArrayList;
         url =getString(R.string.url);
         urlattribute = getString(R.string.attribute);
         coform=(Button)findViewById(R.id.coform);
+        dialogBuilder = new AlertDialog.Builder(listproduct.this);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
             String carcareid = bundle.get("carcareid").toString();
@@ -64,21 +76,44 @@ import java.util.ArrayList;
                                 coform.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        ArrayList<Integer> gid=new ArrayList<>();
-                                        for (int i=0;i<itemArray.size();i++){
-                                            AtCustomITem item =itemArray.get(i);
-                                            if (item.isChecked==true){
-                                                gid.add(item.id);
+                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_queue, null);
+                                        btnOk=layoutView.findViewById(R.id.btnOk);
+                                        btnCancel=layoutView.findViewById(R.id.btnCancel);
+                                        content =layoutView.findViewById(R.id.contact);
+                                        dialogBuilder.setView(layoutView);
+                                        alertDialog = dialogBuilder.create();
+                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                        alertDialog.show();
+                                        btnOk.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                alertDialog.dismiss();
+                                                ArrayList<Integer> gid=new ArrayList<>();
+                                                for (int i=0;i<itemArray.size();i++){
+                                                    AtCustomITem item =itemArray.get(i);
+                                                    if (item.isChecked==true){
+                                                        gid.add(item.id);
+                                                    }
+                                                }
+                                                Intent intent = new Intent(listproduct.this,Status.class);
+                                                intent.putExtra("id",memberid);
+                                                intent.putExtra("cmid",carmemberid);
+                                                intent.putExtra("cid",carcareid);
+                                                intent.putExtra("getdata",gid);
+                                                startActivity(intent);
+                                                finish();
+
                                             }
-                                        }
-                                        Intent intent = new Intent(listproduct.this,Status.class);
-                                        intent.putExtra("id",memberid);
-                                        intent.putExtra("cmid",carmemberid);
-                                        intent.putExtra("cid",carcareid);
-                                        intent.putExtra("getdata",gid);
-                                        startActivity(intent);
-                                        finish();
-//                                        Toast.makeText(listproduct.this,""+gid,Toast.LENGTH_SHORT).show();
+                                        });
+                                        btnCancel.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                alertDialog.dismiss();
+                                            }
+                                        });
+
+
                                     }
                                 });
                             }

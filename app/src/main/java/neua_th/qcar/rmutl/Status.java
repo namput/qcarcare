@@ -36,7 +36,6 @@ public class Status extends AppCompatActivity {
     AlertDialog alertDialog;
     Button getout;
     TextView content;
-    EditText reviewcustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,28 +103,18 @@ public class Status extends AppCompatActivity {
 //                                    public void run() {
                                 //                                },1);
 //                            }
-                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_queue, null);
-                                        getout=layoutView.findViewById(R.id.getout);
-                                        content =layoutView.findViewById(R.id.contact);
-                                        dialogBuilder.setView(layoutView);
-                                        alertDialog = dialogBuilder.create();
-                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                        alertDialog.show();
+                                layoutView = getLayoutInflater().inflate(R.layout.dialog_queue_success, null);
+                                getout=layoutView.findViewById(R.id.getout);
+                                content =layoutView.findViewById(R.id.contact);
+                                dialogBuilder.setView(layoutView);
+                                alertDialog = dialogBuilder.create();
+                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                alertDialog.show();
                                         getout.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
                                                 alertDialog.dismiss();
-
-                                                layoutView = getLayoutInflater().inflate(R.layout.dialog_queue_success, null);
-                                                getout=layoutView.findViewById(R.id.getout);
-                                                content =layoutView.findViewById(R.id.contact);
-                                                dialogBuilder.setView(layoutView);
-                                                alertDialog = dialogBuilder.create();
-                                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                                alertDialog.show();
-
                                                 Intent intent=new Intent(Status.this,Menu.class);
                                                 intent.putExtra("member_id",id);
                                                 finish();

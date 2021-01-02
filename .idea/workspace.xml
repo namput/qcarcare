@@ -22,23 +22,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b128452-c1ea-4d23-8a41-e88492704c19" name="Default Changelist" comment="update queue">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_disabled_by_default_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_done_all_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_offline_pin_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/opunbold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_fail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_fail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_login_fail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_queue.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_queue_success.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_success.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_contact_support_24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/RatingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/RatingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_task_alt_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_task_alt_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/neua_th/qcar/rmutl/listproduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_queue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_queue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_dialog.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_dialogs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_dialogs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -358,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609589267009</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update queue">
+      <created>1609612867766</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609612867767</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,10 +401,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1607522724033" />
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1609607143801">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1609615090663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609607143801" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609615090663" />
     <state x="417" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1609567850213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -472,10 +469,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="599" y="282" key="VCS.EditChangelistDialog/0.0.1536.824@0.0.1536.824" timestamp="1608560118297" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609589269881">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609612870691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609589269881" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609612870691" />
     <state x="584" y="190" key="chooseDestDirectoryDialog" timestamp="1609496363464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
