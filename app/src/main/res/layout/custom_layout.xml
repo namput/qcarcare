@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:descendantFocusability="blocksDescendants">
+
+    <TextView android:id="@+id/textViewContent"
+              android:fontFamily="@font/opun"
+              android:layout_columnWeight="1"
+              android:text="Content"
+              android:textColor="#00b"
+              android:textSize="16sp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="15dp"
+              android:layout_marginBottom="5dp"/>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_rowSpan="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:buttonTint="#FF5722"
+        android:checked="false" />
+
+</GridLayout>
+

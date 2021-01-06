@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Rmutl" parent="AppTheme.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/md_blue_grey_600</item>
+        <item name="colorOnPrimary">@color/md_blue_300</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/md_pink_300</item>
+        <item name="colorSecondaryVariant">@color/md_indigo_500</item>
+        <item name="colorOnSecondary">@color/md_black_1000</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- font -->
+        <item name="android:fontFamily">@font/opun</item>
+    </style>
+</resources>
