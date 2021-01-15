@@ -25,6 +25,8 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.net.ssl.SSLEngineResult;
+
 public class Status extends AppCompatActivity {
     String morderqueue;
     String mstatus;
@@ -85,6 +87,7 @@ public class Status extends AppCompatActivity {
                         @Override
                         public void onCompleted(Exception e, JsonArray result) {
                             if (result!=null){
+//                                Toast.makeText(Status.this,""+result,Toast.LENGTH_LONG).show();
                                 JsonObject item = (JsonObject)result.get(0);
                                 morderqueue = item.get("queue_id").getAsString();
                                 mstatus = item.get("status_name").getAsString();
@@ -92,6 +95,18 @@ public class Status extends AppCompatActivity {
                                 mprogress = item.get("progress").getAsInt();
                                 mtime = item.get("all_time").getAsInt();
                                 String order= item.get("queue_order").getAsString();
+                                String carcare_id = item.get("carcare_id").getAsString();
+                                String sentstatus = getString(R.string.sentstatus);
+//                                Toast.makeText(Status.this,"555"+carcare_id,Toast.LENGTH_LONG).show();
+                                Ion.with(Status.this)
+                                        .load(url+sentstatus)
+                                        .setBodyParameter("carcare_id",carcare_id)
+                                        .asJsonObject()
+                                        .setCallback(new FutureCallback<JsonObject>() {
+                                            @Override
+                                            public void onCompleted(Exception e, JsonObject result) {
+                                            }
+                                        });
 
                                 status.setText("สถานะ "+mstatus);
                                 orderqueue.setText("ลำดับคิว "+morderqueue);

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "539555122764",
+    "project_id": "qcarcare-64c57",
+    "storage_bucket": "qcarcare-64c57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539555122764:android:601ce0f9cca0466bcbaee9",
+        "android_client_info": {
+          "package_name": "it.qcar.taks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539555122764-55vlp8b3t4sd18pu10ouubhbdgjgsoov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGMRVbOQcKgdq0vua-KS1Z8IF30xPqXlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539555122764-55vlp8b3t4sd18pu10ouubhbdgjgsoov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

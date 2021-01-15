@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rmutl.R;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
@@ -190,6 +191,19 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                         if (result!=null){
                             String member_id=result.get("member_id").getAsString();
+                            final String urlgettoken = getString(R.string.gettoken);
+                            String token = FirebaseInstanceId.getInstance().getToken();
+                            Ion.with(MainActivity.this)
+                                    .load(url+urlgettoken)
+                                    .setBodyParameter("token",token)
+                                    .setBodyParameter("member_id",member_id)
+                                    .asString()
+                                    .setCallback(new FutureCallback<String>() {
+                                        @Override
+                                        public void onCompleted(Exception e, String result) {
+
+                                        }
+                                    });
                             Intent intent=new Intent(MainActivity.this,Menu.class);
                             intent.putExtra("member_id",member_id);
                             finish();

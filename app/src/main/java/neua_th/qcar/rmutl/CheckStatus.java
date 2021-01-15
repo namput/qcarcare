@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rmutl.R;
 import com.google.gson.JsonArray;
@@ -45,6 +46,7 @@ public class CheckStatus extends AppCompatActivity {
     AlertDialog.Builder dialogBuilder;
     View layoutView;
     AlertDialog alertDialog;
+    String sentstatuscencel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class CheckStatus extends AppCompatActivity {
         urlupdatequeue = getString(R.string.updatequeue);
         url = getString(R.string.url);
         statusqueue = getString(R.string.statusqueue);
+        sentstatuscencel = getString(R.string.sentstatuscencel);
         orderqueue = (TextView)findViewById(R.id.qorder);
         status = (TextView)findViewById(R.id.status);
         queue = (TextView)findViewById(R.id.queue);
@@ -156,41 +159,53 @@ public class CheckStatus extends AppCompatActivity {
                         .setBodyParameter("qid", morderqueue)
                         .setBodyParameter("statusid","3")
                         .setBodyParameter("datenow",stringDate)
-                        .asString()
-                        .setCallback(new FutureCallback<String>() {
+                        .asJsonObject()
+                        .setCallback(new FutureCallback<JsonObject>() {
                             @Override
-                            public void onCompleted(Exception e, String result) {
-                                alertDialog.dismiss();
-                                status.setTextColor(Color.parseColor("#BF360C"));
-                                relativeLayout.setBackgroundColor(getColor(R.color.md_amber_900));
-                                status.setText("สถานะ เสร็จสิ้น");
-                                queue.setText(" ");
-                                progress.setText(" ");
-                                time.setText(" ");
-                                swipeContainer.setRefreshing(false);
+                            public void onCompleted(Exception e, JsonObject result) {
+                                String carcare_id = result.get("carcare_id").getAsString();
+                                if (result!=null){
+                                    Ion.with(CheckStatus.this)
+                                            .load(url+sentstatuscencel)
+                                            .setBodyParameter("carcare_id",carcare_id)
+                                            .asJsonObject()
+                                            .setCallback(new FutureCallback<JsonObject>() {
+                                                @Override
+                                                public void onCompleted(Exception e, JsonObject result) {
+                                                }
+                                            });
+                                    alertDialog.dismiss();
+                                    status.setTextColor(Color.parseColor("#BF360C"));
+                                    relativeLayout.setBackgroundColor(getColor(R.color.md_amber_900));
+                                    status.setText("สถานะ เสร็จสิ้น");
+                                    queue.setText(" ");
+                                    progress.setText(" ");
+                                    time.setText(" ");
+                                    swipeContainer.setRefreshing(false);
 
-                                layoutView = getLayoutInflater().inflate(R.layout.fragment_custom_dialogs, null);
-                                dialogBuilder.setView(layoutView);
-                                alertDialog = dialogBuilder.create();
-                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                alertDialog.show();
-                                Button getout = layoutView.findViewById(R.id.getout);
-                                getout.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        alertDialog.dismiss();
-                                        finish();
-                                        startActivity(new Intent(CheckStatus.this,Menu.class).putExtra("member_id",id));
+                                    layoutView = getLayoutInflater().inflate(R.layout.fragment_custom_dialogs, null);
+                                    dialogBuilder.setView(layoutView);
+                                    alertDialog = dialogBuilder.create();
+                                    alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                    alertDialog.show();
+                                    Button getout = layoutView.findViewById(R.id.getout);
+                                    getout.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            alertDialog.dismiss();
+                                            finish();
+                                            startActivity(new Intent(CheckStatus.this,Menu.class).putExtra("member_id",id));
 
-                                    }
-                                });
+                                        }
+                                    });
+                                }
+
 
 
                             }
                         });
-
-            }
+                            }
 
         });
         btnCancel.setOnClickListener(new View.OnClickListener() {

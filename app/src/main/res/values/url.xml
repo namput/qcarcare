@@ -21,4 +21,7 @@
     <string name="checkstatus">checkstatus</string>
     <string name="updatequeue">updatequeue</string>
     <string name="updaterating">RatingReview</string>
+    <string name="gettoken">gettoken</string>
+    <string name="sentstatus">sentstatus</string>
+    <string name="sentstatuscencel">sentstatuscencel</string>
 </resources>

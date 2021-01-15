@@ -11,6 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rmutl">
+        <service
+            android:name="neua_th.qcar.rmutl.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="neua_th.qcar.rmutl.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
         <activity android:name="neua_th.qcar.rmutl.ConfigActivity"></activity>
         <activity android:name="neua_th.qcar.rmutl.RatingActivity" />
         <activity android:name="neua_th.qcar.rmutl.CheckStatus" />
