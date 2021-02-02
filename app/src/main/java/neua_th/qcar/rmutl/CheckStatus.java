@@ -89,7 +89,7 @@ public class CheckStatus extends AppCompatActivity {
 
     public void fetchTimelineAsync(int page) {
         Date date = new Date();
-        stringDate = DateFormat.getDateInstance().format(date);
+        stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
         Ion.with(CheckStatus.this)
                 .load(url+statusqueue)
                 .setBodyParameter("id",id)
@@ -109,15 +109,12 @@ public class CheckStatus extends AppCompatActivity {
                             mtime = item.get("all_time").getAsInt();
                             if (mstatusId==1){
                                 status.setTextColor(Color.parseColor("#00C853"));
-                                relativeLayout.setBackgroundColor(getColor(R.color.md_blue_grey_700));
                             }
                             if (mstatusId==2){
                                 status.setTextColor(Color.parseColor("#00C853"));
-                                relativeLayout.setBackgroundColor(getColor(R.color.md_light_blue_800));
                             }
                             if (mstatusId==3){
                                 status.setTextColor(Color.parseColor("#BF360C"));
-                                relativeLayout.setBackgroundColor(getColor(R.color.md_amber_900));
                             }
 
                             status.setText(mstatus);
@@ -157,7 +154,7 @@ public class CheckStatus extends AppCompatActivity {
                 Ion.with(CheckStatus.this)
                         .load(url+urlupdatequeue)
                         .setBodyParameter("qid", morderqueue)
-                        .setBodyParameter("statusid","3")
+                        .setBodyParameter("statusid","4")
                         .setBodyParameter("datenow",stringDate)
                         .asJsonObject()
                         .setCallback(new FutureCallback<JsonObject>() {

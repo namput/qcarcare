@@ -102,29 +102,6 @@
             </androidx.cardview.widget.CardView>
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <CheckBox
-                        android:id="@+id/remember"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:background="@android:color/transparent"
-                        android:buttonTint="@color/md_black_1000"
-                        android:textStyle="bold"
-                        android:textColor="@color/md_black_1000"
-                       android:text="บันทึกการเข้าสู่ระบบ"
-                        android:textSize="18dp"
-                        android:minWidth="320dp"
-                        android:minHeight="50dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
             <Button
                 android:id="@+id/login"
                 style="@style/Button1"

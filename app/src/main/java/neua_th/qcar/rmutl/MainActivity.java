@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -54,25 +55,15 @@ public class MainActivity extends AppCompatActivity {
         password=(EditText)findViewById(R.id.password);
         login=(Button)findViewById(R.id.login);
         crecate=(Button)findViewById(R.id.create);
-        remember = (CheckBox)findViewById(R.id.remember);
+
         reviewcustomer = (EditText)findViewById(R.id.reviewcustomer);
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
-        bundle = getIntent().getExtras();
-        if (bundle!=null){
-            mPreferences.edit().clear().apply();
-            Intent i = getBaseContext().getPackageManager().
-                    getLaunchIntentForPackage(getBaseContext().getPackageName());
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(i);
-            finish();
-        }
 
         //ลิงค์เชื่อต่อ
         url=getString(R.string.url);
         urllogin=getString(R.string.login);
         final String urlcreate=getString(R.string.create);
-        getPreference();
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,54 +122,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void putPreference(){
 
-        String mphone=phone.getText().toString();
-        String mpassword=password.getText().toString();
-        boolean isChecked=remember.isChecked();
-        SharedPreferences.Editor editor=mPreferences.edit();
-        editor.putString("p_phone",mphone);
-        editor.putString("p_pssword",mpassword);
-        editor.putBoolean("p_save",isChecked);
-        editor.apply();
-        //Toast.makeText(getBaseContext(),"บันทึก"+editor,Toast.LENGTH_LONG).show();
-
-    }
-    private void getPreference(){
-
-        if (mPreferences.contains("p_phone")){
-            mphone = mPreferences.getString("p_phone",null);
-            phone.setText(mphone);
-        }
-        if (mPreferences.contains("p_pssword")){
-            mpassword = mPreferences.getString("p_pssword",null);
-            password.setText(mpassword);
-        }
-        if (mPreferences.contains("p_save")){
-            mremember = mPreferences.getBoolean("p_save",false);
-            remember.setChecked(mremember);
-        }
-        if (mphone!=null){
-            if (mpassword!=null){
-                loginnow();
-            }
-        }
-
-    }
     private void loginnow(){
         final ProgressDialog dialog=new ProgressDialog(MainActivity.this);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setMessage("รอสักครู่...");
         dialog.setIndeterminate(true);
         dialog.show();
-
-        if (remember.isChecked()){
-            putPreference();
-        }else {
-            mPreferences.edit().clear().apply();
-            //Toast.makeText(MainActivity.this,"ไม่บันทึก",Toast.LENGTH_LONG).show();
-
-        }
         Ion.with(MainActivity.this)
                 .load(url+urllogin)
                 .setBodyParameter("phone",phone.getText().toString())
@@ -204,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
 
                                         }
                                     });
+                            SharedPreferences savelogin = getSharedPreferences("CHECK_LOGIN", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = savelogin.edit();
+                            editor.putBoolean("login_status",true);
+                            editor.putString("member_id",member_id);
+                            editor.commit();
+                            finish();
                             Intent intent=new Intent(MainActivity.this,Menu.class);
                             intent.putExtra("member_id",member_id);
                             finish();

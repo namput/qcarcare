@@ -56,7 +56,7 @@ public class Status extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(Status.this);
 
         Date date = new Date();
-        String stringDate = DateFormat.getDateInstance().format(date);
+        String stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
             String id = bundle.getString("id");
@@ -97,7 +97,6 @@ public class Status extends AppCompatActivity {
                                 String order= item.get("queue_order").getAsString();
                                 String carcare_id = item.get("carcare_id").getAsString();
                                 String sentstatus = getString(R.string.sentstatus);
-//                                Toast.makeText(Status.this,"555"+carcare_id,Toast.LENGTH_LONG).show();
                                 Ion.with(Status.this)
                                         .load(url+sentstatus)
                                         .setBodyParameter("carcare_id",carcare_id)

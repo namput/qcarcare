@@ -59,7 +59,7 @@
                         android:layout_marginBottom="8dp"
                         android:text="กำลังรอคิว"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="30sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView

@@ -83,7 +83,7 @@ public class Menu extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Date date = new Date();
-                    String stringDate = DateFormat.getDateInstance().format(date);
+                    String stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
                     Ion.with(Menu.this)
                             .load(url+urlcheckstatus)
                             .setBodyParameter("id",mid)

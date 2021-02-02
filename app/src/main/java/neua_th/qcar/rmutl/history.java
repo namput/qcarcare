@@ -51,7 +51,8 @@ public class history extends AppCompatActivity {
                                     String qid =item.get("queue_id").getAsString();
                                     String cmnumber =item.get("car_member_number").getAsString();
                                     String sername =item.get("car_service_name").getAsString();
-                                    itemArray.add(new HCustomITem(qid,carcare,date,cmnumber,sername));
+                                    String status =item.get("status_id").getAsString();
+                                    itemArray.add(new HCustomITem(qid,carcare,date,cmnumber,sername,status));
 //                                    Toast.makeText(history.this,""+date,Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -66,10 +67,18 @@ public class history extends AppCompatActivity {
 
                                     HCustomITem item = itemArray.get(position);
                                     String queueId =item.qid;
-                                    Intent intent = new Intent(history.this,RatingActivity.class);
-                                    intent.putExtra("queueId", queueId);
-                                    intent.putExtra("mid",mid);
-                                    startActivity(intent);
+                                    String status = item.status;
+
+                                    switch (status){
+                                        case "3":
+                                        Intent intent = new Intent(history.this,RatingActivity.class);
+                                        intent.putExtra("queueId", queueId);
+                                        intent.putExtra("mid",mid);
+                                        startActivity(intent);
+                                        break;
+                                        default:Toast.makeText(history.this,"รายการนี้ไม่สามารถให้ความเห็นได้",Toast.LENGTH_LONG).show();break;
+                                    }
+
                                 }
                             });
                         }

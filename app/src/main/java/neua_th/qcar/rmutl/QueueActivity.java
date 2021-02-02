@@ -38,7 +38,7 @@ public class QueueActivity extends AppCompatActivity {
         urllistcarcare= getString(R.string.listcarcare);
         urlcheckstatus = getString(R.string.checkstatus);
         Date date = new Date();
-        String stringDate = DateFormat.getDateInstance().format(date);
+        String stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null) {
             String mid = bundle.getString("member_id");
