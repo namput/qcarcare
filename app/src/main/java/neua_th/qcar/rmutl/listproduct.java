@@ -33,6 +33,7 @@ import java.util.ArrayList;
      Button btnOk;
      Button btnCancel;
      TextView content;
+     String memberid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,7 @@ import java.util.ArrayList;
         if (bundle !=null){
             String carcareid = bundle.get("carcareid").toString();
             String carmemberid = bundle.get("carmemberid").toString();
-            String memberid = bundle.getString("mid");
-
+            memberid = bundle.getString("mid");
             Ion.with(listproduct.this)
                     .load(url+urlattribute)
                     .setBodyParameter("id",memberid)
@@ -58,9 +58,11 @@ import java.util.ArrayList;
                     .setCallback(new FutureCallback<JsonArray>() {
                         @Override
                         public void onCompleted(Exception e, JsonArray result) {
+
                             ArrayList<AtCustomITem> itemArray=new ArrayList<>();
                             if (result!=null){
                                 int len =result.size();
+//                                Toast.makeText(listproduct.this,len,Toast.LENGTH_LONG).show();
                                 for (int i=0;i<len;i++){
                                     JsonObject item = (JsonObject)result.get(i);
                                     int aid = item.get("attribute_id").getAsInt();
@@ -101,6 +103,7 @@ import java.util.ArrayList;
                                                 intent.putExtra("cmid",carmemberid);
                                                 intent.putExtra("cid",carcareid);
                                                 intent.putExtra("getdata",gid);
+                                                finish();
                                                 startActivity(intent);
                                                 finish();
 
@@ -116,6 +119,26 @@ import java.util.ArrayList;
 
                                     }
                                 });
+                            }else {
+
+                                layoutView = getLayoutInflater().inflate(R.layout.dialog_no_list, null);
+                                View getout = layoutView.findViewById(R.id.getout);
+                                content =layoutView.findViewById(R.id.contact);
+                                dialogBuilder.setView(layoutView);
+                                alertDialog = dialogBuilder.create();
+                                alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                alertDialog.show();
+                                getout.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent=new Intent(listproduct.this,Menu.class);
+                                        intent.putExtra("member_id",memberid);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
                             }
 
                         }

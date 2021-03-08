@@ -68,7 +68,9 @@ public class Carmember extends AppCompatActivity {
                                             intent.putExtra("carcareid", cid);
                                             intent.putExtra("carmemberid", carmemberid);
                                             intent.putExtra("mid",mid);
+                                            finish();
                                             startActivity(intent);
+                                            finish();
                                         }
                                     });
                                 }

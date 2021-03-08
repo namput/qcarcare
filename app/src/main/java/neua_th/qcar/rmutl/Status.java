@@ -112,11 +112,7 @@ public class Status extends AppCompatActivity {
                                 queue.setText("เหลือ "+mqueue+" คิว");
                                 progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
                                 time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
-//                                new Handler().postDelayed(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-                                //                                },1);
-//                            }
+
                                 layoutView = getLayoutInflater().inflate(R.layout.dialog_queue_success, null);
                                 getout=layoutView.findViewById(R.id.getout);
                                 content =layoutView.findViewById(R.id.contact);
@@ -129,7 +125,7 @@ public class Status extends AppCompatActivity {
                                             @Override
                                             public void onClick(View v) {
                                                 alertDialog.dismiss();
-                                                Intent intent=new Intent(Status.this,Menu.class);
+                                                Intent intent=new Intent(Status.this,CheckStatus.class);
                                                 intent.putExtra("member_id",id);
                                                 finish();
                                                 startActivity(intent);

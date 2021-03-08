@@ -117,7 +117,9 @@ public class ConfigActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(View v) {
                                                 alertDialog.dismiss();
-
+                                                Intent intent=new Intent(ConfigActivity.this, MainActivity.class);
+                                                startActivity(intent);
+                                                finish();
                                             }
                                         });
 

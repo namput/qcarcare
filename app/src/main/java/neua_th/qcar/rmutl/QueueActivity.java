@@ -79,6 +79,7 @@ public class QueueActivity extends AppCompatActivity {
                                     intent.putExtra("carcareid", cid);
                                     intent.putExtra("mid", mid);
                                     startActivity(intent);
+                                    finish();
                                 }
                             });
 

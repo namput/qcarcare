@@ -96,7 +96,7 @@ public class Menu extends AppCompatActivity {
                                     if (result!=""){
 
                                         intent = new Intent(Menu.this, CheckStatus.class);
-                                        intent.putExtra("mid",mid);
+                                        intent.putExtra("member_id",mid);
                                     }
                                     else {
                                         intent = new Intent(Menu.this, QueueActivity.class);

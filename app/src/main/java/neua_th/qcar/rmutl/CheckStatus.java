@@ -66,7 +66,7 @@ public class CheckStatus extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
-            id= bundle.getString("mid");
+            id= bundle.getString("member_id");
 
             fetchTimelineAsync(0);
             swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
@@ -117,11 +117,18 @@ public class CheckStatus extends AppCompatActivity {
                                 status.setTextColor(Color.parseColor("#BF360C"));
                             }
 
-                            status.setText(mstatus);
+
                             orderqueue.setText("ลำดับคิว "+order);
-                            queue.setText("เหลือ "+mqueue+" คิว");
-                            progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
-                            time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
+                            if (mqueue>1) {
+                                queue.setText("เหลือ " + mqueue + " คิว");
+                                progress.setText("กำลังดำเนินการ " + mprogress + " รายการ");
+                                time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ " + mtime + " นาที");
+                            }else {
+                                status.setText("ถึงคิวแล้ว");
+                                queue.setText("");
+                                progress.setText("");
+                                time.setText("");
+                            }
 
                             button_send.setOnClickListener(new View.OnClickListener() {
                                 @Override
