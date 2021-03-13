@@ -21,12 +21,14 @@ public class AtCustomITem {
     public String aname;
     public String size;
     public int time;
+    public int price;
     public boolean isChecked;
-    public AtCustomITem(int mid, String mname, String msize, int mtime,boolean isChecked){
+    public AtCustomITem(int mid, String mname, String msize, int mtime,int price,boolean isChecked){
         this.id = mid;
         this.aname = mname;
         this.size = msize;
         this.time = mtime;
+        this.price = price;
         this.isChecked=isChecked;
     }
 }
@@ -37,7 +39,8 @@ class AtViewHolder {
     public CheckBox checkBox;
 
     public AtViewHolder(View convertView) {
-        textViewTitle = (TextView)convertView.findViewById(R.id.textViewContent);
+        textViewTitle = (TextView)convertView.findViewById(R.id.textViewTitle);
+        textViewContent = (TextView)convertView.findViewById(R.id.textViewContent);
         checkBox = (CheckBox)convertView.findViewById(R.id.checkbox);
     }
 }
@@ -64,6 +67,7 @@ class AtCustomAdapter extends ArrayAdapter {
         }
         AtCustomITem item =mITems.get(position);
         mHolder.textViewTitle.setText(item.aname);
+        mHolder.textViewContent.setText("ราคา "+item.price+" บาท");
         mHolder.checkBox.setChecked(item.isChecked);
         mHolder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override

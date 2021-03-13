@@ -71,7 +71,7 @@ class QCustomAdapter extends ArrayAdapter {
 //        mHolder.textViewContent1.setText("คิวว่าง");
         String content="คิวว่าง";
         if (item.mnum>0){
-            content="เหลืออีก "+item.mnum+" คิว";
+            content="มีผู้ใช้บริการ "+item.mnum+" คิว";
             mHolder.textViewContent1.setTextColor(Color.parseColor("#F57F17"));
         }
 

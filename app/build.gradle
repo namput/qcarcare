@@ -13,7 +13,7 @@ android {
         applicationId "it.qcar.taks"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 11
+        versionCode 12
         versionName "1.0.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -6,15 +6,25 @@
             android:rowCount="2"
             android:descendantFocusability="blocksDescendants">
 
-    <TextView android:id="@+id/textViewContent"
+    <TextView android:id="@+id/textViewTitle"
               android:fontFamily="@font/opun"
               android:layout_columnWeight="1"
-              android:text="Content"
+              android:text="title"
               android:textColor="#00b"
               android:textSize="16sp"
               android:layout_marginLeft="10dp"
               android:layout_marginTop="15dp"
               android:layout_marginBottom="5dp"/>
+    <TextView android:id="@+id/textViewContent"
+        android:fontFamily="@font/opun"
+        android:layout_columnWeight="1"
+        android:text="Content"
+        android:layout_gravity="right"
+        android:textColor="#00b"
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"/>
 
     <CheckBox
         android:id="@+id/checkbox"

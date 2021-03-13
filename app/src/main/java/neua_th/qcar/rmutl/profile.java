@@ -32,7 +32,7 @@ public class profile extends AppCompatActivity {
 
     String url;
     String showcolor;
-    String urlupdatename;
+    String showbrand;
     String urlshowcar;
     String urlcarmember;
     String mnumcar;
@@ -49,6 +49,7 @@ public class profile extends AppCompatActivity {
     String urllistcarmember;
     String mid;
     ListView listView;
+    Spinner brands;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,15 +59,15 @@ public class profile extends AppCompatActivity {
 
         url= getString(R.string.url);
         showcolor=getString(R.string.showcolor);
-//        urlupdatename=getString(R.string.updatename);
+        showbrand=getString(R.string.showbrand);
         urlshowcar=getString(R.string.showcar);
         urlcarmember=getString(R.string.carmember);
         urllistcarmember = getString(R.string.listcarmember);
 
-//        EditText mname=(EditText)findViewById(R.id.name);
-//        Button savename=(Button)findViewById(R.id.savename);
-        EditText numcar=(EditText)findViewById(R.id.number);
-        EditText brand=(EditText)findViewById(R.id.brand);
+        EditText numcar1=(EditText)findViewById(R.id.number1);
+        EditText numcar2=(EditText)findViewById(R.id.number2);
+        EditText numcar3=(EditText)findViewById(R.id.number3);
+        brands=(Spinner) findViewById(R.id.brand);
         Button savecar=(Button)findViewById(R.id.savecar);
 
 
@@ -78,6 +79,7 @@ public class profile extends AppCompatActivity {
         spinnercolor =findViewById(R.id.color);
         loadSpinnerData();
         loadSpinnerData1();
+        loadSpinnerData2();
 
 //เช็คว่ามีการส่งค่ามาไหม
         Bundle bundle = getIntent().getExtras();
@@ -89,66 +91,6 @@ public class profile extends AppCompatActivity {
             }
             carmember();
 
-//            mname.setText(member_name);
-//            savename.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                    String changname=mname.getText().toString();
-//
-//                    Ion.with(profile.this)
-//                            .load(url+urlupdatename)
-//                            .setBodyParameter("id",mid)
-//                            .setBodyParameter("name",changname)
-//                            .setBodyParameter("type","3")
-//                            .asJsonObject()
-//                            .setCallback(new FutureCallback<JsonObject>() {
-//                                @Override
-//                                public void onCompleted(Exception e, JsonObject result) {
-//
-//
-//                                    if (result!=null){
-//                                        String member_name=result.get("member_name").getAsString();
-//                                        mname.setText(member_name);
-//
-//                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_success, null);
-//                                        getout=layoutView.findViewById(R.id.getout);
-//                                        content =layoutView.findViewById(R.id.contact);
-//                                        dialogBuilder.setView(layoutView);
-//                                        alertDialog = dialogBuilder.create();
-//                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-//                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                                        alertDialog.show();
-//                                        getout.setOnClickListener(new View.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(View v) {
-//                                                alertDialog.dismiss();
-//
-//                                            }
-//                                        });
-//
-//                                    }
-//                                    else {
-//                                        layoutView = getLayoutInflater().inflate(R.layout.dialog_fail, null);
-//                                        getout=layoutView.findViewById(R.id.getout);
-//                                        content =layoutView.findViewById(R.id.contact);
-//                                        dialogBuilder.setView(layoutView);
-//                                        alertDialog = dialogBuilder.create();
-//                                        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-//                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                                        alertDialog.show();
-//                                        getout.setOnClickListener(new View.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(View v) {
-//                                                alertDialog.dismiss();
-//
-//                                            }
-//                                        });
-//                                    }
-//                                }
-//                            });
-//                }
-//            });
 
             savecar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -156,11 +98,13 @@ public class profile extends AppCompatActivity {
 
                     Object selectedItem = spinner.getSelectedItemId();
                     String selectedText = selectedItem.toString ();
-                    mnumcar=numcar.getText().toString();
-                    mbrand=brand.getText().toString();
+                    mnumcar=numcar1.getText().toString()+" "+numcar2.getText().toString()+" "+numcar3.getText().toString();
+
 
                     Object selectedItemcolor = spinnercolor.getSelectedItemId();
                     String selectedTextcolor = selectedItemcolor.toString ();
+                    Object selectedItembrand = brands.getSelectedItemId();
+                    String selectedTextbrand = selectedItembrand.toString ();
 
                     Ion.with(profile.this)
                             .load(url+urlcarmember)
@@ -168,7 +112,7 @@ public class profile extends AppCompatActivity {
                             .setBodyParameter("car_service",selectedText)
                             .setBodyParameter("color",selectedTextcolor)
                             .setBodyParameter("car_number",mnumcar)
-                            .setBodyParameter("brand",mbrand)
+                            .setBodyParameter("brand",selectedTextbrand)
                             .setBodyParameter("type","3")
                             .asString()
                             .setCallback(new FutureCallback<String>() {
@@ -206,7 +150,6 @@ public class profile extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(View v) {
                                                     alertDialog.dismiss();
-
                                                 }
                                             });
                                     }
@@ -311,6 +254,28 @@ public class profile extends AppCompatActivity {
                         }
 
                         spinnercolor.setAdapter(new ArrayAdapter<>(profile.this, android.R.layout.simple_spinner_dropdown_item,keyValuePairList));
+                    }
+                });
+    }
+    private void loadSpinnerData2(){
+        Ion.with(getApplicationContext())
+                .load(url+showbrand)
+                .asJsonArray()
+                .setCallback(new FutureCallback<JsonArray>() {
+                    @Override
+                    public void onCompleted(Exception e, JsonArray result) {
+
+                        List<KeyValuePair> keyValuePairList = new ArrayList<>();
+                        String name ="เลือกแบรนด์";
+                        keyValuePairList.add(new KeyValuePair("0", name));
+                        for (int i=0;i<result.size();i++){
+                            JsonObject jsObject=(JsonObject)result.get(i);
+                            String k =jsObject.get("brand_id").getAsString();
+                            name =jsObject.get("brand_name").getAsString();
+                            keyValuePairList.add(new KeyValuePair(k, name));
+
+                        }
+                        brands.setAdapter(new ArrayAdapter<>(profile.this, android.R.layout.simple_spinner_dropdown_item,keyValuePairList));
                     }
                 });
     }

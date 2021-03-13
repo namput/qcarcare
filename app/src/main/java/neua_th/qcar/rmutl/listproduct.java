@@ -69,8 +69,9 @@ import java.util.ArrayList;
                                     String name = item.get("attribute_name").getAsString();
                                     String size = item.get("size").getAsString();
                                     int time = item.get("time").getAsInt();
-                                    itemArray.add(new AtCustomITem(aid,name,size,time,false));
-//                                    Toast.makeText(listproduct.this,""+itemArray,Toast.LENGTH_SHORT).show();
+                                    int price = item.get("price").getAsInt();
+                                    itemArray.add(new AtCustomITem(aid,name,size,time,price,false));
+
                                 }
                                 AtCustomAdapter adapter = new AtCustomAdapter(getBaseContext(),itemArray);
                                 listView=(ListView)findViewById(R.id.listView3);
@@ -120,7 +121,7 @@ import java.util.ArrayList;
                                     }
                                 });
                             }else {
-
+                                Toast.makeText(listproduct.this,""+result,Toast.LENGTH_SHORT).show();
                                 layoutView = getLayoutInflater().inflate(R.layout.dialog_no_list, null);
                                 View getout = layoutView.findViewById(R.id.getout);
                                 content =layoutView.findViewById(R.id.contact);

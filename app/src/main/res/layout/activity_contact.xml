@@ -133,6 +133,24 @@
                     android:textSize="18sp"
                     android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_below="@id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="สาขาวิชาเทคโนโลยีสารสนเทศ"
+                    android:textColor="@color/md_teal_A700"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_below="@id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร"
+                    android:textColor="@color/md_teal_A700"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/logout"

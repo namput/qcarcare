@@ -47,6 +47,8 @@ public class CheckStatus extends AppCompatActivity {
     View layoutView;
     AlertDialog alertDialog;
     String sentstatuscencel;
+    int sumtime;
+    int price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +86,7 @@ public class CheckStatus extends AppCompatActivity {
                     android.R.color.holo_red_light);
         }
 
-
         }
-
     public void fetchTimelineAsync(int page) {
         Date date = new Date();
         stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
@@ -94,19 +94,21 @@ public class CheckStatus extends AppCompatActivity {
                 .load(url+statusqueue)
                 .setBodyParameter("id",id)
                 .setBodyParameter("datenow",stringDate)
-                .asJsonArray()
-                .setCallback(new FutureCallback<JsonArray>() {
+                .asJsonObject()
+                .setCallback(new FutureCallback<JsonObject>() {
                     @Override
-                    public void onCompleted(Exception e, JsonArray result) {
+                    public void onCompleted(Exception e, JsonObject result) {
                         if (result!=null){
-                            JsonObject item = (JsonObject)result.get(0);
-                            order= item.get("queue_order").getAsString();
-                            morderqueue = item.get("queue_id").getAsString();
-                            mstatus = item.get("status_name").getAsString();
-                            int mstatusId = item.get("status_id").getAsInt();
-                            mqueue = item.get("queue").getAsInt();
-                            mprogress = item.get("progress").getAsInt();
-                            mtime = item.get("all_time").getAsInt();
+                            order= result.get("queue_order").getAsString();
+                            morderqueue = result.get("queue_id").getAsString();
+                            mstatus = result.get("status_name").getAsString();
+                            int mstatusId = result.get("status_id").getAsInt();
+                            mqueue = result.get("queue").getAsInt();
+                            mprogress = result.get("progress").getAsInt();
+                            mtime = result.get("all_time").getAsInt();
+                            sumtime = result.get("sumtime").getAsInt();
+                            price = result.get("price").getAsInt();
+//                            Toast.makeText(CheckStatus.this,""+result,Toast.LENGTH_LONG).show();
                             if (mstatusId==1){
                                 status.setTextColor(Color.parseColor("#00C853"));
                             }
@@ -117,17 +119,17 @@ public class CheckStatus extends AppCompatActivity {
                                 status.setTextColor(Color.parseColor("#BF360C"));
                             }
 
-
-                            orderqueue.setText("ลำดับคิว "+order);
-                            if (mqueue>1) {
-                                queue.setText("เหลือ " + mqueue + " คิว");
-                                progress.setText("กำลังดำเนินการ " + mprogress + " รายการ");
-                                time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ " + mtime + " นาที");
+                            progress.setText("ราคา "+price+" บาท");
+                            orderqueue.setText("หมายเลขคิว "+order);
+                            if (mqueue>=1) {
+                                queue.setText("มีผู้รับบริการ " + mqueue + " คิว \nเวลาให้บริการ "+sumtime+" ที");
+                                String timer = "รถของท่านจะใช้เวลาล้าง " + mtime + " นาที";
+                                time.setText(timer);
                             }else {
                                 status.setText("ถึงคิวแล้ว");
                                 queue.setText("");
-                                progress.setText("");
-                                time.setText("");
+
+                                time.setText("รถของท่านจะใช้เวลาล้าง " + mtime + " นาที");
                             }
 
                             button_send.setOnClickListener(new View.OnClickListener() {
@@ -141,9 +143,9 @@ public class CheckStatus extends AppCompatActivity {
                             });
                             swipeContainer.setRefreshing(false);
                         }
-
                     }
                 });
+
             }
     private void showAlertDialog(int layout){
         dialogBuilder = new AlertDialog.Builder(CheckStatus.this);
@@ -204,9 +206,6 @@ public class CheckStatus extends AppCompatActivity {
                                         }
                                     });
                                 }
-
-
-
                             }
                         });
                             }

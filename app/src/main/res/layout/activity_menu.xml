@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="200dp"
         android:theme="?attr/actionBarTheme"
         app:logo="@drawable/brand"
         tools:ignore="MissingConstraints" />
@@ -155,11 +155,6 @@
 
             </androidx.gridlayout.widget.GridLayout>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/whale" />
         </LinearLayout>
     </ScrollView>
 

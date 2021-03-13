@@ -24,4 +24,5 @@
     <string name="gettoken">gettoken</string>
     <string name="sentstatus">sentstatus</string>
     <string name="sentstatuscencel">sentstatuscencel</string>
+    <string name="showbrand">selectbrand</string>
 </resources>

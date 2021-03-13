@@ -64,7 +64,6 @@ public class Status extends AppCompatActivity {
             String cid = bundle.getString("cid");
             ArrayList<Integer> attrid =bundle.getIntegerArrayList("getdata");
 
-
             JsonObject jsonoject = new JsonObject();
             jsonoject.addProperty("id",id);
             jsonoject.addProperty("cmid",cmid);
@@ -86,8 +85,9 @@ public class Status extends AppCompatActivity {
                     .setCallback(new FutureCallback<JsonArray>() {
                         @Override
                         public void onCompleted(Exception e, JsonArray result) {
+//                            Toast.makeText(Status.this,""+result,Toast.LENGTH_LONG).show();
                             if (result!=null){
-//                                Toast.makeText(Status.this,""+result,Toast.LENGTH_LONG).show();
+
                                 JsonObject item = (JsonObject)result.get(0);
                                 morderqueue = item.get("queue_id").getAsString();
                                 mstatus = item.get("status_name").getAsString();
@@ -111,7 +111,7 @@ public class Status extends AppCompatActivity {
                                 orderqueue.setText("ลำดับคิว "+morderqueue);
                                 queue.setText("เหลือ "+mqueue+" คิว");
                                 progress.setText("กำลังดำเนินการ "+mprogress+" รายการ");
-                                time.setText("เวลาที่ใช้ในการล้างรถโดยประมาณ "+mtime+" นาที");
+                                time.setText("การล้างรถจะใช้เวลา "+mtime+" นาที");
 
                                 layoutView = getLayoutInflater().inflate(R.layout.dialog_queue_success, null);
                                 getout=layoutView.findViewById(R.id.getout);
